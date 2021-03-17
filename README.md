@@ -1,3 +1,4 @@
+![logo](https://user-images.githubusercontent.com/73217480/111449541-c720b200-870f-11eb-9657-b6f06fc11cde.png)
 # Tema: CovidX-Aplikacija za upravljanje Covid testiranjem i informisanje o Covid19
 ## Grupa8-KrizniStab
 - [Selma Hadžijusufović](https://github.com/shadzijusu1)

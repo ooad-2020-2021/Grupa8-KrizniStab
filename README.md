@@ -24,10 +24,10 @@ U vremenima u kojima se nalazimo, svjedoci smo velike neorganiziranosti u Covid 
 • uvid u statistike i izvještaje\
 • eRezervacija termina za testiranje\
 • elektronski rezultat testa i elektronsko rješenje o izolaciji, ukoliko je rezultat testa pozitivan\
-• opcionalno dodavanje osoba s kojima je pacijent bio u kontaktu (u slučaju da je pacijent pozitivan, kontaktima se šalje obavijest)\
+• (opcionalno) dodavanje osoba s kojima je pacijent bio u kontaktu (u slučaju da je pacijent pozitivan, kontaktima se šalje obavijest)\
 • prikaz mjera prevencije\
 • evidencija simptoma i dalje upute\
-• u slučaju izolacije, pacijentu se prikaziva broj dana do kraja izolacije i druge pogodnosti za olakšanje samog procesa
+• u slučaju izolacije, pacijentu se prikazuje broj dana do kraja izolacije i druge pogodnosti za olakšanje samog procesa
 
 ## Guest (neprijavljeni korisnik):
 • uvid u statistike i izvještaje\

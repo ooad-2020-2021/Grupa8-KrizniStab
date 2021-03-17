@@ -16,17 +16,17 @@ U vremenima u kojima se nalazimo, svjedoci smo velike neorganiziranosti u Covid 
 • ažurira informacije o medicinskom osoblju: broj medicinskih radnika koji su dostupni (ako su zaraženi na bolovanju su), te datume zadnjeg testiranja osoblja
 • uvid u statistike i izvještaje
 
-## Medicinsko osoblje
+## Medicinsko osoblje:
 • evidentira datum i rezultat testiranja pacijenata
 • uvid u statistike i izvještaje
 
-## Pacijent 
+## Pacijent: 
 • zakazuje termin testiranja
 • dobija elektronsko rješenje o izolaciji ukoliko je rezultat testa pozitivan
 • opcionalno dodaje osobe s kojima je bio u kontaktu. U slučaju da je neka od osoba koji su kontakti pacijenta dobila pozitivan test, pacijent je obaviješten i 
 • uvid u statistike i izvještaje
 
-## Guest (neprijavljeni korisnik)
+## Guest (neprijavljeni korisnik):
 • uvid u statistike i izvještaje
 • ima pristup mapama sa lokacijama na kojima se moze testirati 
 • provjera simptoma (ako su simptomi loši, ponuditi mu da se registruje i zakaže termin za testiranje)

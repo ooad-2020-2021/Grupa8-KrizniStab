@@ -31,7 +31,7 @@ U vremenima u kojima se nalazimo, svjedoci smo velike neorganiziranosti u Covid 
 
 ## Guest (neprijavljeni korisnik):
 • uvid u statistike i izvještaje\
-• pristup mapama sa lokacijama na kojima se može testirati\ 
+• pristup mapama sa lokacijama na kojima se može testirati\
 • prikaz mjera prevencije\
 • evidencija simptoma i dalje upute
 

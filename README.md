@@ -11,25 +11,29 @@ U vremenima u kojima se nalazimo, svjedoci smo velike neorganiziranosti u Covid 
 ## Funkcionalnosti
 
 ## Admin:
-• odobrava termine testiranja nakon provjere telefonom\
-• dodaje i briše osoblje iz baze podataka\
-• ažurira informacije o medicinskom osoblju: broj medicinskih radnika koji su dostupni (ako su zaraženi na bolovanju su), te datume zadnjeg testiranja osoblja\
-• uvid u statistike i izvještaje
+• uvid u statistike i izvještaje\
+• kontrola i odobravanje termina testiranja nakon provjere telefonom\
+• dodavanje i brisanje osoblja iz baze podataka\
+• ažuriranje informacija o medicinskom osoblju: broj medicinskih radnika koji su dostupni ili na bolovanju, te datume zadnjeg testiranja osoblja
 
 ## Medicinsko osoblje:
-• evidentira datum i rezultat testiranja pacijenata\
-• uvid u statistike i izvještaje
+• uvid u statistike i izvještaje\
+• evidentiranje datuma i rezultata testiranja pacijenata, te praćenje stanja pacijenata
 
 ## Pacijent: 
-• zakazuje termin testiranja\
-• dobija elektronsko rješenje o izolaciji ukoliko je rezultat testa pozitivan\
-• opcionalno dodaje osobe s kojima je bio u kontaktu. U slučaju da je neka od osoba koji su kontakti pacijenta dobila pozitivan test, pacijent je obaviješten i preporučuje mu se testiranje\
-• uvid u statistike i izvještaje
+• uvid u statistike i izvještaje\
+• eRezervacija termina za testiranje\
+• elektronski rezultat testa i elektronsko rješenje o izolaciji, ukoliko je rezultat testa pozitivan\
+• opcionalno dodavanje osoba s kojima je pacijent bio u kontaktu (u slučaju da je pacijent pozitivan, kontaktima se šalje obavijest)\
+• prikaz mjera prevencije\
+• evidencija simptoma i dalje upute\
+• u slučaju izolacije, pacijentu se prikaziva broj dana do kraja izolacije i druge pogodnosti za olakšanje samog procesa
 
 ## Guest (neprijavljeni korisnik):
 • uvid u statistike i izvještaje\
-• ima pristup mapama sa lokacijama na kojima se moze testirati\ 
-• provjera simptoma (ako su simptomi loši, ponuditi mu da se registruje i zakaže termin za testiranje)
+• pristup mapama sa lokacijama na kojima se može testirati\ 
+• prikaz mjera prevencije\
+• evidencija simptoma i dalje upute
 
 
 

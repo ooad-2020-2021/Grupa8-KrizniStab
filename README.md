@@ -11,25 +11,25 @@ U vremenima u kojima se nalazimo, svjedoci smo velike neorganiziranosti u Covid 
 ## Funkcionalnosti
 
 ## Admin:
-• odobrava termine testiranja nakon provjere telefonom
-• dodaje i briše osoblje iz baze podataka
-• ažurira informacije o medicinskom osoblju: broj medicinskih radnika koji su dostupni (ako su zaraženi na bolovanju su), te datume zadnjeg testiranja osoblja
-• uvid u statistike i izvještaje
+• odobrava termine testiranja nakon provjere telefonom\
+• dodaje i briše osoblje iz baze podataka\
+• ažurira informacije o medicinskom osoblju: broj medicinskih radnika koji su dostupni (ako su zaraženi na bolovanju su), te datume zadnjeg testiranja osoblja\
+• uvid u statistike i izvještaje\
 
 ## Medicinsko osoblje:
-• evidentira datum i rezultat testiranja pacijenata
-• uvid u statistike i izvještaje
+• evidentira datum i rezultat testiranja pacijenata\
+• uvid u statistike i izvještaje\
 
 ## Pacijent: 
-• zakazuje termin testiranja
-• dobija elektronsko rješenje o izolaciji ukoliko je rezultat testa pozitivan
-• opcionalno dodaje osobe s kojima je bio u kontaktu. U slučaju da je neka od osoba koji su kontakti pacijenta dobila pozitivan test, pacijent je obaviješten i 
-• uvid u statistike i izvještaje
+• zakazuje termin testiranja\
+• dobija elektronsko rješenje o izolaciji ukoliko je rezultat testa pozitivan\
+• opcionalno dodaje osobe s kojima je bio u kontaktu. U slučaju da je neka od osoba koji su kontakti pacijenta dobila pozitivan test, pacijent je obaviješten i preporučuje mu se testiranje\
+• uvid u statistike i izvještaje\
 
 ## Guest (neprijavljeni korisnik):
-• uvid u statistike i izvještaje
-• ima pristup mapama sa lokacijama na kojima se moze testirati 
-• provjera simptoma (ako su simptomi loši, ponuditi mu da se registruje i zakaže termin za testiranje)
+• uvid u statistike i izvještaje\
+• ima pristup mapama sa lokacijama na kojima se moze testirati\ 
+• provjera simptoma (ako su simptomi loši, ponuditi mu da se registruje i zakaže termin za testiranje)\
 
 
 

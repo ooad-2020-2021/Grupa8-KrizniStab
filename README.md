@@ -34,15 +34,12 @@ izolaciji, notifikacije o stanju u mjestu boravka, opcionalna mogućnost dodavan
 kontakata, prikaz broja dana do kraja izolacije (u slučaju da je pacijent u izolaciji) i\
 druge pogodnosti za olakšanje samog procesa.\
 ● Medicinsko osoblje ima pristup posebnim izvještajima, kako bi se proces testiranja učinio lakšim.\
-● Medicinsko osoblje ima pristup kartonima pacijenata uz mogućnost ažuriranja istih (unos\
-rezultata testa).\
+● Medicinsko osoblje ima pristup kartonima pacijenata uz mogućnost ažuriranja istih (unos rezultata testa).\
 ● Medicinsko osoblje svaki radni dan ispunjava upitnik o zdravstvenom stanju.\
-● Administrator ima mogućnost unosa, brisanja, ažuriranja podataka o medicinskom\
-osoblju.\
+● Administrator ima mogućnost unosa, brisanja, ažuriranja podataka o medicinskom osoblju.\
 ● Administrator odobrava zakazane termine testiranja.\
-● Administrator dobiva obavijest ukoliko medicinsko osoblje nije ispunilo potrebnu\
-dokumentaciju za radni dan.\
-● Administrator ima uvid u dostupno osoblje za datu lokaciju.\
+● Administrator dobiva obavijest ukoliko medicinsko osoblje nije ispunilo potrebnu dokumentaciju za radni dan.\
+● Administrator ima uvid u dostupno osoblje za datu lokaciju.
 
 ## Akteri
 ● Admin\

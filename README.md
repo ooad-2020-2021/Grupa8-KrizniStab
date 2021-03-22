@@ -23,11 +23,7 @@ U vremenima u kojima se nalazimo, svjedoci smo velike neorganiziranosti u Covid 
 ● Pri ulasku na sistem, neregistrovani korisnik ima pristup sedmičnim i mjesečnim izvještajima o broju testiranih, oporavljenih, umrlih i novozaraženih u mjestu i zemlji
 boravka, kao i cjelovit izvještaj od pojave Covid-19, mjerama prevencije (preporuke za javnost za zaštitu od infekcije koronavirusom), lokacijama za testiranje i mogućnost evidencije simptoma, kao i dalje upute ukoliko postoji mogućnost da je zaražen.\
 ● Korisnik kreira vlastiti račun, pri čemu unosi lične podatke i pripadnost kritičnoj grupi.\
-● Registrovanom korisniku (Pacijent) je omogućeno sve što i neregistrovanom, uz\
-rezervaciju termina za testiranje, elektronski rezultat testa, elektronsko rješenje o\
-izolaciji, notifikacije o stanju u mjestu boravka, opcionalna mogućnost dodavanja\
-kontakata, prikaz broja dana do kraja izolacije (u slučaju da je pacijent u izolaciji) i\
-druge pogodnosti za olakšanje samog procesa.\
+● Registrovanom korisniku (Pacijent) je omogućeno sve što i neregistrovanom, uz rezervaciju termina za testiranje, elektronski rezultat testa, elektronsko rješenje o izolaciji, notifikacije o stanju u mjestu boravka, opcionalna mogućnost dodavanja kontakata, prikaz broja dana do kraja izolacije (u slučaju da je pacijent u izolaciji) i druge pogodnosti za olakšanje samog procesa.\
 ● Medicinsko osoblje ima pristup posebnim izvještajima, kako bi se proces testiranja učinio lakšim.\
 ● Medicinsko osoblje ima pristup kartonima pacijenata uz mogućnost ažuriranja istih (unos rezultata testa).\
 ● Medicinsko osoblje svaki radni dan ispunjava upitnik o zdravstvenom stanju.\

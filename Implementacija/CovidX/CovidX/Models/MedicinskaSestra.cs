@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,13 +14,16 @@ namespace CovidX.Models
             this.datumZadnjegTestiranja = datumZadnjegTestiranja;
             this.lokacija = lokacija;
         }
-
+        [DataType(DataType.Date)]
+        [DisplayName("Datum zadnjeg testiranja:")]
         public DateTime datumZadnjegTestiranja
         {
             get; set;
         }
         [Required]
-         public Lokacija lokacija
+        [DisplayName("Lokacija:")]
+        [EnumDataType(typeof(Lokacija))]
+        public Lokacija lokacija
         {
             get; set;
         }

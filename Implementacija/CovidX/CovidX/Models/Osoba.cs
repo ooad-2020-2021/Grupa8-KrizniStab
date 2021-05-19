@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,32 +21,44 @@ namespace CovidX.Models
             this.brojKartona = brojKartona;
         }
         [Required]
+        [DisplayName("Ime:")]
         public String ime
         {
             get; set;
         }
         [Required]
+        [DisplayName("Prezime:")]
         public String prezime
         {
             get; set;
         }
         [Key]
         [Required]
+        [DisplayName("JMBG:")]
         public String jmbg
         {
             get; set;
         }
         [Required]
+        [DisplayName("Datum rođenja:")]
+        [DataType(DataType.Date)]
         public DateTime datumRodjenja
         {
             get; set;
         }
-         public String telefon { get; set; }
+        [DisplayName("Telefon:")]
+        public String telefon { get; set; }
+
+        [DisplayName("Mail:")]
+        [Required]
         public String mail
         {
             get; set;
         }
+        [DisplayName("Spol:")]
+        [EnumDataType(typeof(Spol))]
         public Spol spol { get; set; }
+        [DisplayName("Broj kartona:")]
         [Required]
         public String brojKartona { get; set; }
     }

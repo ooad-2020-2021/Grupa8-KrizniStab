@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,26 +20,35 @@ namespace CovidX.Models
         }
         [Key]
         [Required]
+        [DisplayName("ID testa:")]
         public String idTesta
         {
             get; set;
         }
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayName("Datum testiranja:")]
         public DateTime datumTestiranja
         {
             get; set;
         }
         [Required]
+        [DisplayName("Vrsta testa:")]
+        [EnumDataType(typeof(VrstaTesta))]
         public VrstaTesta vrstaTesta
         {
             get; set;
         }
         [Required]
+        [DisplayName("Namjena testa:")]
+        [EnumDataType(typeof(NamjenaTesta))]
         public NamjenaTesta namjenaTesta
         {
             get; set;
         }
         [Required]
+        [DisplayName("Rezultat testa:")]
+        [EnumDataType(typeof(Rezultat))]
         public Rezultat rezultat { get; set; }
         public DateTime odrediKrajIzolacije(DateTime datumTestiranja)
         {

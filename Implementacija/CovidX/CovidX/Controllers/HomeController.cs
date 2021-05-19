@@ -12,7 +12,7 @@ namespace CovidX.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+       
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -24,6 +24,27 @@ namespace CovidX.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+        public IActionResult HomePageView()
+        {
+            return View();
+        }
+        public IActionResult PrevencijaView()
+        {
+            return View();
+        }
+
+        public IActionResult EvidencijaSimptomaView()
+        {
+            return View();
+        }
+        public IActionResult RegistracijaView()
+        {
+            return View();
+        }
+        public IActionResult LoginView()
         {
             return View();
         }

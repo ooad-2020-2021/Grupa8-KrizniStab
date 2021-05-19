@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Registracija";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>home</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+SC">
+    <link rel="stylesheet" href="/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="/Login-Form-Clean.css">
+    <link rel="stylesheet" href="/Ludens-Users---2-Register.css">
+    <link rel="stylesheet" href="/Map-Clean.css">
+    <link rel="stylesheet" href="/Navigation-with-Button.css">
+    <link rel="stylesheet" href="/Off-Canvas-Sidebar-Drawer-Navbar.css">
+    <link rel="stylesheet" href="/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="/Projects-Clean.css">
+    <link rel="stylesheet" href="/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="/sidebar-1.css">
+    <link rel="stylesheet" href="/SIdebar-Responsive-2-1.css">
+    <link rel="stylesheet" href="/SIdebar-Responsive-2.css">
+    <link rel="stylesheet" href="/sidebar.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body style="margin-left: -52px;">
+    <nav class="navbar navbar-dark fixed-top bg-info off-canvas" data-toggle="tooltip" data-bss-tooltip="" data-right-drawer="0" data-open-drawer="1" style="height: 240.8px;background: rgb(255,255,255);margin: 57px;margin-top: 110px;margin-left: 28px;width: 260px;margin-bottom: 40px;color: rgb(161,195,230);">
+        <div class="container-fluid flex-column">
+            <ul class="navbar-nav text-left flex-column drawer-menu" style="margin-top: 26px;margin-left: 1px;font-size: 18px;color: rgb(249,249,249);margin-bottom: 5px;">
+                <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="HomePageView">Statistike</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="EvidencijaSimptomaView">Evidencija simptoma</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="PrevencijaView">Mjere prevencije</a></li>
+                <li class="nav-item"><a class="nav-link active asp-controller="Home" asp-action="RegistracijaView">Registracija/Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron" style="width: 500px;margin-left: 121px;margin-top: 30px;height: 660px;">
+        <h1 style="text-align: center;">Kreirajte račun</h1>
+        <p class="text-center">Već imate račun?&nbsp;<a class="text-info" asp-controller="Home" asp-action="LoginView">Logujte se.</a></p>
+        <p></p>
+        <div class="container">
+            <div class="row" style="margin-top: 23px;">
+                <div class="col-md-6 col-xl-5" style="width: 50px;padding-right: 0px;text-align: right;font-size: 20px;margin-left: -40px;"><label class="col-form-label" style="font-weight: bold;font-size: 16px;">Ime:</label></div>
+                <div class="col-md-6 col-xl-4"><input type="text" style="padding-top: 0px;height: 30px;margin-top: 5px;"></div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 23px;">
+            <div class="col-md-6 col-xl-4" style="width: 50px;padding-right: 0px;text-align: right;font-size: 20px;"><label class="col-form-label" style="font-weight: bold;font-size: 16px;">Prezime:</label></div>
+            <div class="col-md-6 col-xl-4"><input type="text" style="padding-top: 0px;height: 30px;margin-top: 5px;"></div>
+        </div>
+        <div class="row" style="margin-top: 23px;">
+            <div class="col-md-6 col-xl-4" style="width: 50px;padding-right: 0px;text-align: right;font-size: 20px;"><label class="col-form-label" style="font-weight: bold;font-size: 16px;">JMBG:</label></div>
+            <div class="col-md-6 col-xl-4"><input type="text" style="padding-top: 0px;height: 30px;margin-top: 5px;"></div>
+        </div>
+        <div class="row" style="margin-top: 23px;">
+            <div class="col-md-6 col-xl-4" style="width: 50px;padding-right: 0px;text-align: right;font-size: 20px;"><label class="col-form-label" style="font-weight: bold;text-align: right;margin-left: -20px;font-size: 16px;">Datum rođenja:</label></div>
+            <div class="col-md-6 col-xl-4 text-center"><input type="date" style="width: 163.2px;text-align: right;margin-top: 4px;margin-left: -3px;"></div>
+        </div>
+        <div class="row" style="margin-top: 23px;">
+            <div class="col-md-6 col-xl-4" style="width: 50px;padding-right: 0px;text-align: right;font-size: 20px;"><label class="col-form-label" style="font-weight: bold;font-size: 16px;">Email:</label></div>
+            <div class="col-md-6 col-xl-4"><input type="email"></div>
+        </div>
+        <div class="row" style="margin-top: 23px;">
+            <div class="col-md-6 col-xl-4" style="width: 50px;padding-right: 0px;text-align: right;font-size: 20px;"><label class="col-form-label" style="font-weight: bold;font-size: 16px;">Broj telefona:</label></div>
+            <div class="col-md-6 col-xl-4"><input type="tel"></div>
+        </div>
+        <div class="row" style="margin-top: 23px;">
+            <div class="col-md-6 col-xl-4" style="width: 50px;padding-right: 0px;text-align: right;font-size: 20px;"><label class="col-form-label" style="font-weight: bold;font-size: 16px;">Spol(M/Z):</label></div>
+            <div class="col-md-6 col-xl-4"><input type="text"></div>
+        </div><button class="btn btn-primary" type="button" style="margin-left: 197px;margin-top: 13px;">Kreiraj</button>
+    </div>
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/chart.min.js"></script>
+    <script src="/assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar.js"></script>
+    <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar-1.js"></script>
+    <script id="bs-live-reload" data-sseport="60587" data-lastchange="1621437948372" src="/js/livereload.js"></script>
+</body>
+
+</html>

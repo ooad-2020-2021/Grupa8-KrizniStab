@@ -1,0 +1,14 @@
+.nav_style
+ {
+     list-style:none;
+     font:14px calibri;
+     background-color: none;
+     padding: 10px;
+ }
+.nav_style:hover
+ {
+     background-color:red;
+ }
+.selected .nav_style{
+    background-color: yellow;
+ }

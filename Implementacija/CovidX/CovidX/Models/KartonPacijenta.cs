@@ -9,13 +9,14 @@ namespace CovidX.Models
 {
     public class KartonPacijenta : Karton
     {
-        public KartonPacijenta(String brKartona, Boolean kriticna, List<Test> tests, StatusPacijenta statusPacijenta) : base(brKartona, kriticna, tests)
+        [DisplayName("Status pacijenta:")]
+        [EnumDataType(typeof(StatusPacijenta))]
+        public StatusPacijenta statusPacijenta { get; set; }
+
+        public KartonPacijenta(string brojKartona, bool kriticnaGrupa, StatusPacijenta statusPacijenta) : base(brojKartona, kriticnaGrupa)
 
         {
             this.statusPacijenta = statusPacijenta;
         }
-        [DisplayName("Status pacijenta:")]
-        [EnumDataType(typeof(StatusPacijenta))]
-        public StatusPacijenta statusPacijenta { get; set; }
     }
 }

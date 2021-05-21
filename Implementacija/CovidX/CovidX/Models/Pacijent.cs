@@ -7,7 +7,7 @@ namespace CovidX.Models
 {
     public class Pacijent : Osoba
     {
-        public Pacijent(String ime, String prezime, String jmbg, DateTime datumRodjenja, String telefon, String mail, Spol spol, String brojKartona) : base(ime, prezime, jmbg, datumRodjenja, telefon, mail, spol, brojKartona)
+        public Pacijent(string ime, string prezime, string jmbg, DateTime datumRodjenja, string telefon, string mail, Spol spol, string brojKartona) : base(ime, prezime, jmbg, datumRodjenja, telefon, mail, spol, brojKartona)
         {
         }
     }

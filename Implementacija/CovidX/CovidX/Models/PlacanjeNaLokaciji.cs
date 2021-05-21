@@ -9,13 +9,13 @@ namespace CovidX.Models
 {
     public class PlacanjeNaLokaciji : Placanje
     {
-        public PlacanjeNaLokaciji(DateTime datumUplate, Double iznosUplate, Boolean placanjeIzvrseno) : base(datumUplate, iznosUplate)
+        public PlacanjeNaLokaciji(int placanjeId, DateTime datumUplate, double iznosUplate, bool placanjeIzvrseno) : base(placanjeId, datumUplate, iznosUplate)
         {
             this.placanjeIzvrseno = placanjeIzvrseno;
         }
         [DisplayName("Placanje izvršeno:")]
         [Required]
-        public Boolean placanjeIzvrseno { get; set; }
+        public bool placanjeIzvrseno { get; set; }
 
     }
 }

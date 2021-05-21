@@ -9,7 +9,7 @@ namespace CovidX.Models
 {
     public class Osoba
     {
-        public Osoba(String ime, String prezime, String jmbg, DateTime datumRodjenja, String telefon, String mail, Spol spol, String brojKartona)
+        public Osoba(string ime, string prezime, string jmbg, DateTime datumRodjenja, string telefon, string mail, Spol spol, string brojKartona)
         {
             this.ime = ime;
             this.prezime = prezime;
@@ -22,20 +22,20 @@ namespace CovidX.Models
         }
         [Required]
         [DisplayName("Ime:")]
-        public String ime
+        public string ime
         {
             get; set;
         }
         [Required]
         [DisplayName("Prezime:")]
-        public String prezime
+        public string prezime
         {
             get; set;
         }
         [Key]
         [Required]
         [DisplayName("JMBG:")]
-        public String jmbg
+        public string jmbg
         {
             get; set;
         }
@@ -47,11 +47,11 @@ namespace CovidX.Models
             get; set;
         }
         [DisplayName("Telefon:")]
-        public String telefon { get; set; }
+        public string telefon { get; set; }
 
         [DisplayName("Mail:")]
         [Required]
-        public String mail
+        public string mail
         {
             get; set;
         }
@@ -60,6 +60,6 @@ namespace CovidX.Models
         public Spol spol { get; set; }
         [DisplayName("Broj kartona:")]
         [Required]
-        public String brojKartona { get; set; }
+        public string brojKartona { get; set; }
     }
 }

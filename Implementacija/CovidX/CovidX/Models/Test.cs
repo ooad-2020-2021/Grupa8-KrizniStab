@@ -21,7 +21,7 @@ namespace CovidX.Models
         [Key]
         [Required]
         [DisplayName("ID testa:")]
-        public String idTesta
+        public string idTesta
         {
             get; set;
         }
@@ -50,10 +50,15 @@ namespace CovidX.Models
         [DisplayName("Rezultat testa:")]
         [EnumDataType(typeof(Rezultat))]
         public Rezultat rezultat { get; set; }
+        [Required]
+        [DisplayName("Broj kartona:")]
+        public string brojKartona { get; set; }
+
         public DateTime odrediKrajIzolacije(DateTime datumTestiranja)
         {
             return datumTestiranja.AddDays(14);
         }
+
 
     }
 }

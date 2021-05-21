@@ -12,21 +12,17 @@ namespace CovidX.Models
     {
         [Key]
         [DisplayName("Broj kartona:")]
-        public String brojKartona { get; set; }
+        public string brojKartona { get; set; }
         [Required]
         [DisplayName("Kritična grupa:")]
-        public Boolean kriticnaGrupa { get; set; }
-        [NotMapped]
-        [DisplayName("Testovi:")]
-        public List<Test> testovi { get; set; }
-        public Karton(String brKartona, Boolean kriticna, List<Test> tests = null)
+        public bool kriticnaGrupa { get; set; }
+       
+        public Karton(string brojKartona, bool kriticnaGrupa)
         {
-            brojKartona = brKartona;
-            kriticnaGrupa = kriticna;
-            if(tests != null)
-            {
-                testovi = tests;
-            }
+            this.brojKartona = brojKartona;
+            this.kriticnaGrupa = kriticnaGrupa;
+              
+          
         }
     }
 }

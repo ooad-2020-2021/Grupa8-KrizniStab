@@ -9,10 +9,11 @@ namespace CovidX.Models
 {
     public class MedicinskaSestra : Osoba
     {
-        public MedicinskaSestra(String ime, String prezime, String jmbg, DateTime datumRodjenja, String telefon, String mail, Spol spol, String brojKartona, DateTime datumZadnjegTestiranja, Lokacija lokacija) : base(ime,  prezime,  jmbg,  datumRodjenja,  telefon,  mail,  spol,  brojKartona)
+        public MedicinskaSestra(string ime, string prezime, string jmbg, DateTime datumRodjenja, string telefon, string mail, Spol spol, String brojKartona, DateTime datumZadnjegTestiranja, Lokacija lokacija, int adminId) : base(ime,  prezime,  jmbg,  datumRodjenja,  telefon,  mail,  spol,  brojKartona)
         {
             this.datumZadnjegTestiranja = datumZadnjegTestiranja;
             this.lokacija = lokacija;
+            this.adminId = adminId;
         }
         [DataType(DataType.Date)]
         [DisplayName("Datum zadnjeg testiranja:")]
@@ -24,6 +25,10 @@ namespace CovidX.Models
         [DisplayName("Lokacija:")]
         [EnumDataType(typeof(Lokacija))]
         public Lokacija lokacija
+        {
+            get; set;
+        }
+        public int adminId
         {
             get; set;
         }

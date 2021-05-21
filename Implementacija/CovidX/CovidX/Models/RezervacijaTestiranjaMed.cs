@@ -6,13 +6,13 @@ namespace CovidX.Models
 { 
     public class RezervacijaTestiranjaMed
     {
-        public RezervacijaTestiranjaMed(DateTime datumTestiranja, VrstaTesta vrstaTesta, NamjenaTesta namjenaTesta, string jmbgMed, Test test)
+        public RezervacijaTestiranjaMed(DateTime datumTestiranja, VrstaTesta vrstaTesta, NamjenaTesta namjenaTesta, string jmbgMed, int testId)
         {
             this.datumTestiranja = datumTestiranja;
             this.vrstaTesta = vrstaTesta;
             this.namjenaTesta = namjenaTesta;
             this.jmbgMed = jmbgMed;
-            this.test = test;
+            this.testId = testId;
         }
         [Required]
         [DataType(DataType.Date)]
@@ -28,9 +28,10 @@ namespace CovidX.Models
         public NamjenaTesta namjenaTesta { get; set; }
         [Required]
         [DisplayName("JMBG medicinske sestre:")]
-        public String jmbgMed { get; set; }
+        public string jmbgMed { get; set; }
         [Required]
         [DisplayName("Test:")]
-        public Test test { get; set; }
+        [Key]
+        public int testId { get; set; }
     }
 }

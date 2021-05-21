@@ -10,18 +10,19 @@ namespace CovidX.Models
   
     public class RezervacijaTestiranja
     {
-        public RezervacijaTestiranja(string idRezervacije, Lokacija lokacija, Test test, Placanje placanje, string jmbgPacijenta)
+        public RezervacijaTestiranja(string idRezervacije, Lokacija lokacija, int testId, int placanjeId, string jmbgPacijenta, int adminId)
         {
             this.idRezervacije = idRezervacije;
             this.lokacija = lokacija;
-            this.test = test;
-            this.placanje = placanje;
+            this.testId = testId;
+            this.placanjeId = placanjeId;
             this.jmbgPacijenta = jmbgPacijenta;
+            this.adminId = adminId;
         }
         [Key]
         [Required]
         [DisplayName("ID rezervacije:")]
-        public String idRezervacije { get; set; }
+        public string idRezervacije { get; set; }
         [Required]
         [DisplayName("Lokacija:")]
         [EnumDataType(typeof(Lokacija))]
@@ -31,16 +32,20 @@ namespace CovidX.Models
         }
         [Required]
         [DisplayName("Test:")]
-        public Test test
+        public int testId
         {
             get; set;
         }
         [Required]
         [DisplayName("Placanje:")]
-        public Placanje placanje { get; set; }
+        public int placanjeId { get; set; }
         [Required]
         [DisplayName("JMBG pacijenta:")]
-        public String jmbgPacijenta
+        public string jmbgPacijenta
+        {
+            get; set;
+        }
+        public int adminId
         {
             get; set;
         }

@@ -24,6 +24,7 @@ namespace CovidX.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+       
         private string ime;
         public string prezime;
         public DateTime datumRodjenja;
@@ -91,12 +92,13 @@ namespace CovidX.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new Osoba(ime = Input.ime, prezime = Input.prezime, jmbg = Input.jmbg, datumRodjenja = Input.datumRodjenja, telefon = Input.telefon, Email = Input.Email, spol = Input.spol, brojKartona = Input.jmbg.Substring(9));
+                var user = new Osoba { UserName = Input.ime, Email = Input.Email, ime = Input.ime, prezime = Input.prezime, jmbg = Input.jmbg, datumRodjenja = Input.datumRodjenja, telefon = Input.telefon, spol = Input.spol, brojKartona = Input.jmbg.Substring(9) };
                 var result = await _userManager.CreateAsync(user, Input.Password);
+               
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-
+/*
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(
@@ -113,10 +115,10 @@ namespace CovidX.Areas.Identity.Pages.Account
                         return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
                     }
                     else
-                    {
+                    {*/
                         await _signInManager.SignInAsync(user, isPersistent: false);
                         return LocalRedirect(returnUrl);
-                    }
+                    
                 }
                 foreach (var error in result.Errors)
                 {

@@ -31,39 +31,41 @@
     <link rel="stylesheet" href="/sidebar.css">
     <link rel="stylesheet" href="/styles.css">
 </head>
+    <body style="margin-left: 384px;margin-top: 16px;margin-right: -22px;width: 822.6px;">
+        <div class="jumbotron" style="margin-right: 25px;width: 947.6px;height: 559px;margin-top: 23px;margin-left: -44px;">
+             @using (Html.BeginForm("Talepler", "Home", FormMethod.Post))
+             {
+            <h1 style="margin-bottom: -10px;margin-top: -39px;background: #17a2b8;color: rgb(255,255,255);padding: 8px;text-align: center;text-align: center; font-size:30px">Evidencija simptoma</h1>
+            <p><br>COVID-19 na različite načine utječe na različite ljude. Većina zaraženih će razviti blagu do umjerenu bolest i oporaviti se bez hospitalizacije. Evidentirajte simptome da biste provjerili trebate li se testirati ili ne.<br><br></p>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="c1" id="formCheck-1"><label class="form-check-label" for="formCheck-1" style="margin-bottom: 3px;">otežano disanje ili nedostatak daha</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="c2" id="formCheck-2"><label class="form-check-label" for="formCheck-2" style="margin-bottom: 3px;">bol ili pritisak u grudima</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="c3" id="formCheck-3"><label class="form-check-label" for="formCheck-3" style="margin-bottom: 3px;">gubitak govora ili pokreta</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="c4" id="formCheck-4"><label class="form-check-label" for="formCheck-4" style="margin-bottom: 3px;">povišena temperatura</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="c5" id="formCheck-5"><label class="form-check-label" for="formCheck-5" style="margin-bottom: 3px;">suhi kašalj</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="c6" id="formCheck-6"><label class="form-check-label" for="formCheck-6" style="margin-bottom: 3px;">umor</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="c7" id="formCheck-7"><label class="form-check-label" for="formCheck-7" style="margin-bottom: 3px;">glavobolja</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="c8" id="formCheck-8"><label class="form-check-label" for="formCheck-8" style="margin-bottom: 3px;">gubitak okusa ili mirisa</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="c9" id="formCheck-9"><label class="form-check-label" for="formCheck-9" style="margin-bottom: 3px;">osip na koži</label></div><button class="btn btn-primary" type="submit" style="height: 37px;margin-top: 6px;margin-right: 3px;margin-bottom: 7px;margin-left: 380px;">Provjeri</button>
+            <nav class="navbar navbar-dark fixed-top bg-info off-canvas" data-toggle="tooltip" data-bss-tooltip="" data-right-drawer="0" data-open-drawer="1" style="height: 240.8px;background: rgb(255,255,255);margin: 57px;margin-top: 110px;margin-left: 28px;width: 260px;margin-bottom: 40px;color: rgb(161,195,230);">
+                <div class="container-fluid flex-column">
+                    <ul class="navbar-nav text-left flex-column drawer-menu" style="margin-top: 26px;margin-left: 1px;font-size: 23px;color: rgb(249,249,249);margin-bottom: 5px;">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="HomePageView">Statistike</a></li>
+                        <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="EvidencijaSimptomaView">Evidencija simptoma</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="PrevencijaView">Mjere prevencije</a></li>
 
-<body style="margin-left: 384px;margin-top: 16px;margin-right: -22px;width: 822.6px;">
-    <div class="jumbotron" style="margin-right: 25px;width: 947.6px;height: 559px;margin-top: 23px;margin-left: -44px;">
-        <h1 style="margin-bottom: -10px;margin-top: -39px;background: #17a2b8;color: rgb(255,255,255);padding: 8px;text-align: center;text-align: center; font-size:30px">Evidencija simptoma</h1>
-        <p><br>COVID-19 na različite načine utječe na različite ljude. Većina zaraženih će razviti blagu do umjerenu bolest i oporaviti se bez hospitalizacije. Evidentirajte simptome da biste provjerili trebate li se testirati ili ne.<br><br></p>
-        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1" style="margin-bottom: 3px;">otežano disanje ili nedostatak daha</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2" style="margin-bottom: 3px;">bol ili pritisak u grudima</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3" style="margin-bottom: 3px;">gubitak govora ili pokreta</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4"><label class="form-check-label" for="formCheck-4" style="margin-bottom: 3px;">povišena temperatura</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-5"><label class="form-check-label" for="formCheck-5" style="margin-bottom: 3px;">suhi kašalj</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-6"><label class="form-check-label" for="formCheck-6" style="margin-bottom: 3px;">umor</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-7"><label class="form-check-label" for="formCheck-7" style="margin-bottom: 3px;">glavobolja</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-8"><label class="form-check-label" for="formCheck-8" style="margin-bottom: 3px;">gubitak okusa ili mirisa</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-9"><label class="form-check-label" for="formCheck-9" style="margin-bottom: 3px;">osip na koži</label></div><button class="btn btn-primary" type="button" style="height: 37px;margin-top: 6px;margin-right: 3px;margin-bottom: 7px;margin-left: 380px;">Provjeri</button>
-        <nav class="navbar navbar-dark fixed-top bg-info off-canvas" data-toggle="tooltip" data-bss-tooltip="" data-right-drawer="0" data-open-drawer="1" style="height: 240.8px;background: rgb(255,255,255);margin: 57px;margin-top: 110px;margin-left: 28px;width: 260px;margin-bottom: 40px;color: rgb(161,195,230);">
-            <div class="container-fluid flex-column">
-                <ul class="navbar-nav text-left flex-column drawer-menu" style="margin-top: 26px;margin-left: 1px;font-size: 18px;color: rgb(249,249,249);margin-bottom: 5px;">
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="HomePageView">Statistike</a></li>
-                    <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="EvidencijaSimptomaView">Evidencija simptoma</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="PrevencijaView">Mjere prevencije</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="RegistracijaView">Registracija/Login</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <script src="/assets/js/jquery-3.6.0.min.js"></script>
-    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/chart.min.js"></script>
-    <script src="/assets/js/bs-init.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar.js"></script>
-    <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar-1.js"></script>
-    <script id="bs-live-reload" data-sseport="60587" data-lastchange="1621434356184" src="/js/livereload.js"></script>
-</body>
+                    </ul>
+                </div>
+            </nav>
+             }
+        </div>
+        <script src="/assets/js/jquery-3.6.0.min.js"></script>
+        <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/js/chart.min.js"></script>
+        <script src="/assets/js/bs-init.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar.js"></script>
+        <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar-1.js"></script>
+        <script id="bs-live-reload" data-sseport="60587" data-lastchange="1621434356184" src="/js/livereload.js"></script>
+    </body>
 
 </html>

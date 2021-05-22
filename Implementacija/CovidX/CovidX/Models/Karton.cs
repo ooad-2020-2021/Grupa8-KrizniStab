@@ -11,7 +11,10 @@ namespace CovidX.Models
     public abstract class Karton
     {
         [Key]
+        public int kartonId { get; set; }
+
         [DisplayName("Broj kartona:")]
+        [Required]
         public string brojKartona { get; set; }
         [Required]
         [DisplayName("Kritična grupa:")]

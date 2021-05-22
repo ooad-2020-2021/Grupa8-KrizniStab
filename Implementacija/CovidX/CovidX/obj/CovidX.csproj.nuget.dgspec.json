@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Selma\\source\\repos\\CovidX\\CovidX\\CovidX.csproj": {}
+    "C:\\Users\\Selma\\Documents\\GitHub\\Grupa8-KrizniStab\\Implementacija\\CovidX\\CovidX\\CovidX.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Selma\\source\\repos\\CovidX\\CovidX\\CovidX.csproj": {
+    "C:\\Users\\Selma\\Documents\\GitHub\\Grupa8-KrizniStab\\Implementacija\\CovidX\\CovidX\\CovidX.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Selma\\source\\repos\\CovidX\\CovidX\\CovidX.csproj",
+        "projectUniqueName": "C:\\Users\\Selma\\Documents\\GitHub\\Grupa8-KrizniStab\\Implementacija\\CovidX\\CovidX\\CovidX.csproj",
         "projectName": "CovidX",
-        "projectPath": "C:\\Users\\Selma\\source\\repos\\CovidX\\CovidX\\CovidX.csproj",
+        "projectPath": "C:\\Users\\Selma\\Documents\\GitHub\\Grupa8-KrizniStab\\Implementacija\\CovidX\\CovidX\\CovidX.csproj",
         "packagesPath": "C:\\Users\\Selma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Selma\\source\\repos\\CovidX\\CovidX\\obj\\",
+        "outputPath": "C:\\Users\\Selma\\Documents\\GitHub\\Grupa8-KrizniStab\\Implementacija\\CovidX\\CovidX\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Selma\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,19 +46,25 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.12, )"
+              "version": "[3.1.15, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[3.1.12, )"
+              "version": "[3.1.15, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.12, )"
+              "version": "[3.1.15, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.12, )"
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
             }
           },
           "imports": [

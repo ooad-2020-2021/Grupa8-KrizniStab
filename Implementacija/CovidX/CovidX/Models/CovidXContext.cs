@@ -43,6 +43,7 @@ namespace CovidX.Models
       /*      modelBuilder.Entity<Karton>().ToTable("Karton");*/
             modelBuilder.Entity<KartonOsoblja>().ToTable("Karton osoblja");
             modelBuilder.Entity<KartonPacijenta>().ToTable("Karton pacijenta");
+            base.OnModelCreating(modelBuilder);
 
         }
     }

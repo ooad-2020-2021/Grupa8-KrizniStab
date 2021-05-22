@@ -53,6 +53,7 @@ namespace CovidX.Models
         [Required]
         [DisplayName("Broj kartona:")]
         public string brojKartona { get; set; }
+        public int kartonId { get; set; }
 
         public DateTime odrediKrajIzolacije(DateTime datumTestiranja)
         {

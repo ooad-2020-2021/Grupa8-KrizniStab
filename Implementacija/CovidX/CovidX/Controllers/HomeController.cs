@@ -49,10 +49,7 @@ namespace CovidX.Controllers
         {
             return View();
         }
-        public IActionResult PacijentView()
-        {
-            return View();
-        }
+   
         public IActionResult Login()
         {
             return View();

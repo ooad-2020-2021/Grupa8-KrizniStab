@@ -1,0 +1,169 @@
+﻿@{
+    ViewData["Title"] = "Pacijent profil";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>home</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+SC">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="~/assets/css/-Countdown-BS4-.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Ludens-Users---2-Register.css">
+    <link rel="stylesheet" href="assets/css/Ludens-Users---3-Profile.css">
+    <link rel="stylesheet" href="assets/css/Map-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/Off-Canvas-Sidebar-Drawer-Navbar.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="assets/css/Profile-Edit-Form-1.css">
+    <link rel="stylesheet" href="assets/css/Profile-Edit-Form.css">
+    <link rel="stylesheet" href="assets/css/Projects-Clean.css">
+    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="assets/css/sidebar-1.css">
+    <link rel="stylesheet" href="assets/css/SIdebar-Responsive-2-1.css">
+    <link rel="stylesheet" href="assets/css/SIdebar-Responsive-2.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <main class="page" style="min-height: 100%;">
+        <section class="clean-block about-us">
+            <div class="row" style="margin-right: 0px;margin-left: 0px;">
+                <div class="col">
+                    <nav class="navbar navbar-light navbar-expand-md">
+                        <div class="container-fluid">
+                            <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                            <div class="collapse navbar-collapse" id="navcol-1" style="font-weight:bold">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item"><a class="nav-link active" href="#pacijentpage" style="color: rgba(0,0,0,0.9);">Pacijent profil</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#rezervacijatermina">Rezervacija termina</a></li>
+                                    <li class="nav-item"><a class="nav-link" asp-controller="Pacijent" asp-action="MapaView">Mapa sa lokacijama za testiranje</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Karton</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="row" style="margin-right: 0px;margin-left: 0px;">
+                <div class="col text-center">
+                    <h2 class="text-info" style="margin-left: 122px;">Pause. Breathe. Reflect.<br></h2>
+                </div>
+            </div>
+            <div class="row justify-content-center" style="margin-right: 0px;margin-left: 59px;margin-top: 10px;">
+                <div class="col-sm-6 col-lg-4" style="padding-right: 0px;padding-left: 0px;margin-top: 32px;">
+                    <div class="card clean-card text-center">
+                        <img class="card-img-top w-100 d-block" src="~/assets/img/logo.png" style="margin-top: -8px;">
+                        <div class="card-body info">
+                            <div class="row" style="margin-top: -24px;">
+                                <div class="col-md-12" style="margin-top: 22px;">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="labels">Ime</p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="labels"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="labels">Prezime</p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="labels"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="labels">Username</p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="labels"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="labels">Password</p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="labels"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="labels">Datum rođenja</p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="labels"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="labels">JMBG</p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="labels"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="labels">Email</p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="labels"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="labels">Spol</p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="labels"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <section class="py-5 bg-info text-white" style="width: 347px;height: 413px;margin-top: 217px;margin-left: 236px;">
+                        <div class="container text-center boxed-countdown" data-countdown="11/27/2020 02:51:00">
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    <h1>COUNTDOWN</h1>
+                                    <p>Do kraja izolacije</p>
+                                </div>
+                                <div class="col-6 col-md-3 mt-3" style="margin-left: 110px;width: 101.8px;">
+                                    <p class="number-days m-0 rounded-top" style="width: 104.8px;">00</p>
+                                    <p class="text-countdown rounded-bottom" style="width: 102.8px;">dana</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/chart.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="assets/js/Off-Canvas-Sidebar-Drawer-Navbar.js"></script>
+    <script src="assets/js/Off-Canvas-Sidebar-Drawer-Navbar-1.js"></script>
+    <script src="assets/js/-Countdown-BS4-.js"></script>
+    <script src="assets/js/Profile-Edit-Form.js"></script>
+</body>
+
+</html>

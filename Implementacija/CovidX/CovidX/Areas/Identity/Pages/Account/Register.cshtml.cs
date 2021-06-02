@@ -25,11 +25,9 @@ namespace CovidX.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
        
-        private string ime;
         public string prezime;
         public DateTime datumRodjenja;
         public string jmbg;
-        public string telefon;
         public Spol spol;
         public String Email;
         public String brojKartona;
@@ -92,7 +90,7 @@ namespace CovidX.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new Osoba { UserName = Input.ime, Email = Input.Email, ime = Input.ime, prezime = Input.prezime, jmbg = Input.jmbg, datumRodjenja = Input.datumRodjenja, telefon = Input.telefon, spol = Input.spol, brojKartona = Input.jmbg.Substring(9) };
+                var user = new Osoba {UserName = Input.ime, Email = Input.Email, ime = Input.ime, prezime = Input.prezime, jmbg = Input.jmbg, datumRodjenja = Input.datumRodjenja, telefon = Input.telefon, spol = Input.spol, brojKartona = Input.jmbg.Substring(9) };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                
                 if (result.Succeeded)

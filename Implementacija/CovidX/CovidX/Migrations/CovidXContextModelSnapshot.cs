@@ -15,7 +15,7 @@ namespace CovidX.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.12")
+                .HasAnnotation("ProductVersion", "3.1.15")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -58,8 +58,14 @@ namespace CovidX.Migrations
 
             modelBuilder.Entity("CovidX.Models.KartonOsoblja", b =>
                 {
+                    b.Property<int>("kartonId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<string>("brojKartona")
-                        .HasColumnType("nvarchar(450)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("kriticnaGrupa")
                         .HasColumnType("bit");
@@ -67,15 +73,21 @@ namespace CovidX.Migrations
                     b.Property<int>("statusOsoblja")
                         .HasColumnType("int");
 
-                    b.HasKey("brojKartona");
+                    b.HasKey("kartonId");
 
                     b.ToTable("Karton osoblja");
                 });
 
             modelBuilder.Entity("CovidX.Models.KartonPacijenta", b =>
                 {
+                    b.Property<int>("kartonId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<string>("brojKartona")
-                        .HasColumnType("nvarchar(450)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("kriticnaGrupa")
                         .HasColumnType("bit");
@@ -83,7 +95,7 @@ namespace CovidX.Migrations
                     b.Property<int>("statusPacijenta")
                         .HasColumnType("int");
 
-                    b.HasKey("brojKartona");
+                    b.HasKey("kartonId");
 
                     b.ToTable("Karton pacijenta");
                 });
@@ -280,8 +292,10 @@ namespace CovidX.Migrations
 
             modelBuilder.Entity("CovidX.Models.RezervacijaTestiranja", b =>
                 {
-                    b.Property<string>("idRezervacije")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("idRezervacije")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("adminId")
                         .HasColumnType("int");
@@ -306,10 +320,8 @@ namespace CovidX.Migrations
 
             modelBuilder.Entity("CovidX.Models.RezervacijaTestiranjaMed", b =>
                 {
-                    b.Property<int>("testId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("idRezervacije")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("datumTestiranja")
                         .HasColumnType("datetime2");
@@ -321,25 +333,29 @@ namespace CovidX.Migrations
                     b.Property<int>("namjenaTesta")
                         .HasColumnType("int");
 
+                    b.Property<int>("testId")
+                        .HasColumnType("int");
+
                     b.Property<int>("vrstaTesta")
                         .HasColumnType("int");
 
-                    b.HasKey("testId");
+                    b.HasKey("idRezervacije");
 
                     b.ToTable("Rezervacija testiranja za medicinsko osoblje");
                 });
 
             modelBuilder.Entity("CovidX.Models.Test", b =>
                 {
-                    b.Property<string>("idTesta")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("brojKartona")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("idTesta")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("datumTestiranja")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("kartonId")
+                        .HasColumnType("int");
 
                     b.Property<int>("namjenaTesta")
                         .HasColumnType("int");
@@ -357,16 +373,22 @@ namespace CovidX.Migrations
 
             modelBuilder.Entity("CovidX.Models.UnosRezultata", b =>
                 {
-                    b.Property<int>("testId")
+                    b.Property<int>("unosId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("brojKartona")
+                    b.Property<string>("jmbgMed")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("testId");
+                    b.Property<int>("kartonId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("testId")
+                        .HasColumnType("int");
+
+                    b.HasKey("unosId");
 
                     b.ToTable("Unos rezultata");
                 });

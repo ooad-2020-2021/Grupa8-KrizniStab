@@ -10,6 +10,7 @@ namespace CovidX.Models
 {
     public abstract class Karton
     {
+        [Required]
         [Key]
         public int kartonId { get; set; }
 

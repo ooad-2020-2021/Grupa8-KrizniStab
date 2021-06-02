@@ -12,7 +12,7 @@ namespace CovidX.Models
 
         [DisplayName("Status osoblja:")]
         [EnumDataType(typeof(StatusOsoblja))]
-       
+        [Required]
         public StatusOsoblja statusOsoblja { get; set; }
 
         public KartonOsoblja(string brojKartona, bool kriticnaGrupa, StatusOsoblja statusOsoblja) : base(brojKartona, kriticnaGrupa)

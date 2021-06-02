@@ -35,6 +35,7 @@ namespace CovidX.Models
         {
             get; set;
         }
+        [Required]
         public int adminId
         {
             get; set;

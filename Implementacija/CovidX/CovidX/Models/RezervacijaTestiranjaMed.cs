@@ -14,6 +14,10 @@ namespace CovidX.Models
             this.jmbgMed = jmbgMed;
             this.testId = testId;
         }
+        [Key]
+        [Required]
+        [DisplayName("ID rezervacije:")]
+        public string idRezervacije { get; set; }
         [Required]
         [DataType(DataType.Date)]
         [DisplayName("Datum testiranja:")]
@@ -31,7 +35,6 @@ namespace CovidX.Models
         public string jmbgMed { get; set; }
         [Required]
         [DisplayName("Test:")]
-        [Key]
         public int testId { get; set; }
     }
 }

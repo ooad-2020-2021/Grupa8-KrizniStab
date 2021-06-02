@@ -9,21 +9,36 @@ namespace CovidX.Models
 {
     public class UnosRezultata
     {
-        public UnosRezultata(string brojKartona, int testId)
+        public UnosRezultata(int unosId, int kartonId, int testId, string jmbgMed)
         {
-            this.brojKartona = brojKartona;
+            this.unosId = unosId;
+            this.kartonId = kartonId;
             this.testId = testId;
+            this.jmbgMed = jmbgMed;
+        }
+        [Required]
+        [Key]
+        public int unosId
+        {
+            get; set;
         }
         [Required]
         [DisplayName("Broj kartona:")]
-        public string brojKartona
+        public int kartonId
         {
             get; set;
         }
         [Required]
         [DisplayName("Test:")]
-        [Key]
         public int testId
+        {
+            get; set;
+        }
+
+        //podaci o sestri koja unosi rezultat
+        [Required]
+        [DisplayName("Medicinska sestra: ")]
+        public string jmbgMed
         {
             get; set;
         }

@@ -13,7 +13,7 @@ namespace CovidX.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        
+      
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -55,7 +55,7 @@ namespace CovidX.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Talepler(IFormCollection formCollection)
+        public IActionResult EvidentirajSimptome(IFormCollection formCollection)
         {
             bool c1 = false;
             bool c2 = false;
@@ -66,8 +66,7 @@ namespace CovidX.Controllers
             bool c7 = false;
             bool c8 = false;
             bool c9 = false;
-            
-
+           
             if (!string.IsNullOrEmpty(formCollection["c1"])) { c1 = true; }
             if (!string.IsNullOrEmpty(formCollection["c2"])) { c2 = true; }
             if (!string.IsNullOrEmpty(formCollection["c3"])) { c3 = true; }
@@ -78,7 +77,11 @@ namespace CovidX.Controllers
             if (!string.IsNullOrEmpty(formCollection["c8"])) { c8 = true; }
             if (!string.IsNullOrEmpty(formCollection["c9"])) { c9 = true; }
 
-            if (c4 == true && c5 == true && c6 == true && c8 == true)
+            
+           
+            bool evidencija = IEvidencijaSimptoma.evidentirajSimptome(c1, c2, c3, c4, c5, c6, c7, c8, c9);
+
+            if (evidencija == true)
                 return View("SimptomiNotOK");
             else return View("SimptomiOK");
         }

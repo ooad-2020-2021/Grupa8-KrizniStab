@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace CovidX.Controllers
         {
             return View();
         }
+        [Authorize(Roles ="Medicinska sestra")]
         public IActionResult MedicinskaSestraView()
         {
             return View();

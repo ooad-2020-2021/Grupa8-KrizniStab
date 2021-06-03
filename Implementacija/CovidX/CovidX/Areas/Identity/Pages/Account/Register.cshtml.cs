@@ -68,7 +68,7 @@ namespace CovidX.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string PotvrditePassword { get; set; }
-            public string ime { get; set; }
+            public string Ime { get; set; }
             public string prezime { get; set; }
             
             public DateTime datumRodjenja { get; set; }
@@ -90,7 +90,7 @@ namespace CovidX.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new Osoba {UserName = Input.ime, Email = Input.Email, ime = Input.ime, prezime = Input.prezime, jmbg = Input.jmbg, datumRodjenja = Input.datumRodjenja, telefon = Input.telefon, spol = Input.spol, brojKartona = Input.jmbg.Substring(9) };
+                var user = new Osoba {UserName = Input.Ime, Email = Input.Email, EmailConfirmed = true, ime = Input.Ime, prezime = Input.prezime, jmbg = Input.jmbg, datumRodjenja = Input.datumRodjenja, telefon = Input.telefon, spol = Input.spol, brojKartona = Input.jmbg.Substring(9)};
                 var result = await _userManager.CreateAsync(user, Input.Password);
                
                 if (result.Succeeded)

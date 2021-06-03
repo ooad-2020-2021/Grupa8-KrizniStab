@@ -13,7 +13,15 @@ namespace CovidX.Models
         [DisplayName("Admin")]
         [Required]
         [Key]
-       public int adminId
+       public int id
+        {
+            get; set;
+        }
+        public string email
+        {
+            get; set;
+        }
+        public string password
         {
             get; set;
         }

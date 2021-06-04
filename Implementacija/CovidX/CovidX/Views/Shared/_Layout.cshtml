@@ -23,6 +23,19 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="HomePageView">Početna</a>
                             </li>
+
+                            @if (User.IsInRole("Pacijent"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Pacijent" asp-action="PacijentView">Moja stranica</a>
+                                </li>
+                            }
+                            @if (User.IsInRole("Medicinska sestra"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="MedicinskaSestra" asp-action="MedicinskaSestraView">Moja stranica</a>
+                                </li>
+                            }
                         </ul>
                     </div>
                     </div>

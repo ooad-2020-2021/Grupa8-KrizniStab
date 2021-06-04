@@ -299,7 +299,7 @@ namespace CovidX.Controllers
                 using SqlDataReader reader2 = command2.ExecuteReader();
 
             }
-                return View("MedicinskaSestraView");
+            return View("KartoniPacijenata") ;
         }
     }
 

@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using CovidX.Data;
 using CovidX.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace CovidX
 {
@@ -40,6 +41,7 @@ namespace CovidX
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddHttpClient();
+            
 
         }
 

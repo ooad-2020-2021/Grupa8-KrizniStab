@@ -276,7 +276,12 @@ C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\o
 C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\Pacijent\RezultatTestaView.cshtml.g.cs
 C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\MedicinskaSestra\KartonView.cshtml.g.cs
 C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\MedicinskaSestra\UnosRezultataTesta.cshtml.g.cs
-C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\Placanje\OnlinePlacanjeView.cshtml.g.cs
 C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\KartonOsobljaView.cshtml.g.cs
 C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\MedicinskaSestra\MedicinskaSestraView.cshtml.g.cs
 C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\Pacijent\RezultatTesta.cshtml.g.cs
+C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\Pacijent\OnlinePlacanjeView.cshtml.g.cs
+C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\Placanje\OnlinePlacanjeView.cshtml.g.cs
+C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\MedicinskaSestra\KartoniPacijenata.cshtml.g.cs

@@ -1,4 +1,7 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Osoblje profil";
+    ViewBag.title = "MedicinskaSestraView";
+}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,8 +45,8 @@
                             <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                             <div class="collapse navbar-collapse" id="navcol-1">
                                 <ul class="navbar-nav" style="font-weight:bold">
-                                    <li class="nav-item"><a class="nav-link active" href="#">Osoblje profil</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Kartoni pacijenata</a></li>
+                                    <li class="nav-item"><a class="nav-link active" asp-controller="MedicinskaSestra" asp-action="MedicinskaSestraView">Osoblje profil</a></li>
+                                    <li class="nav-item"><a class="nav-link" asp-controller="MedicinskaSestra" asp-action="KartoniPacijenata">Kartoni pacijenata</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#">Rezervacija termina</a></li>
                                 </ul>
                             </div>
@@ -65,92 +68,53 @@
                                 <div class="col-md-12" style="margin-top: 22px;">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="labels">Ime</p>
+                                            <p class="labels" style="text-align:left">Ime</p>
                                         </div>
                                         <div class="col">
-                                            <p class="labels"></p>
+                                            <p class="labels" style="text-align:right">@ViewBag.ime</p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <p class="labels">Prezime</p>
+                                            <p class="labels" style="text-align:left">Prezime</p>
                                         </div>
                                         <div class="col">
-                                            <p class="labels"></p>
+                                            <p class="labels" style="text-align:right">@ViewBag.prezime</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="labels" style="text-align:left">Datum rođenja</p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="labels" style="text-align:right">@ViewBag.datumRodjenja</p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <p class="labels">Datum rođenja</p>
+                                            <p class="labels" style="text-align:left">JMBG</p>
                                         </div>
                                         <div class="col">
-                                            <p class="labels"></p>
+                                            <p class="labels" style="text-align:right">@ViewBag.jmbg</p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <p class="labels">JMBG</p>
+                                            <p class="labels" style="text-align:left">Email</p>
                                         </div>
                                         <div class="col">
-                                            <p class="labels"></p>
+                                            <p class="labels" style="text-align:right">@ViewBag.mail</p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <p class="labels">Email</p>
+                                            <p class="labels" style="text-align:left">Telefon</p>
                                         </div>
                                         <div class="col">
-                                            <p class="labels"></p>
+                                            <p class="labels" style="text-align:right">@ViewBag.telefon</p>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="labels">Spol</p>
-                                        </div>
-                                        <div class="col">
-                                            <p class="labels"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p class="labels">Kritična grupa</p>
-                                </div>
-                                <div class="col">
-                                    <p class="labels"></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p class="labels">Status</p>
-                                </div>
-                                <div class="col">
-                                    <p class="labels"></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p class="labels">Username</p>
-                                </div>
-                                <div class="col">
-                                    <p class="labels"></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p class="labels">Password</p>
-                                </div>
-                                <div class="col">
-                                    <p class="labels"></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p class="labels">Lokacija</p>
-                                </div>
-                                <div class="col">
-                                    <p class="labels"></p>
                                 </div>
                             </div>
                         </div>

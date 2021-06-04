@@ -1,0 +1,8 @@
+﻿@{ 
+    ViewBag.Title = "Kartoni pacijenata";
+}
+
+@foreach(var karton in Model)
+            {
+    <p>@karton.brojKartona | @karton.kriticnaGrupa | @karton.statusPacijenta</p>
+            }

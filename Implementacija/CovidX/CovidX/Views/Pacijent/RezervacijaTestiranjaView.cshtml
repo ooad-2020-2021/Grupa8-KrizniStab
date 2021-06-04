@@ -1,6 +1,58 @@
 ﻿@{
-    ViewData["Title"] = "Pacijent profil";
+    ViewData["Title"] = "Rezervacija testiranja";
 }
+<style type="text/css">
+    select {
+        // A reset of styles, including removing the default dropdown arrow appearance: none;
+        // Additional resets for further consistency background-color: transparent;
+        border: none;
+        padding: 0 1em 0 0;
+        margin: 0;
+        width: 100%;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: inherit;
+        line-height: inherit;
+        outline: none;
+    }
+
+        select::-ms-expand {
+            display: none;
+        }
+</style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>home</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+SC">
+    <link rel="stylesheet" href="/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="/-Countdown-BS4-.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="/Login-Form-Clean.css">
+    <link rel="stylesheet" href="/Ludens-Users---2-Register.css">
+    <link rel="stylesheet" href="/Ludens-Users---3-Profile.css">
+    <link rel="stylesheet" href="/Map-Clean.css">
+    <link rel="stylesheet" href="/Navigation-with-Button.css">
+    <link rel="stylesheet" href="/Off-Canvas-Sidebar-Drawer-Navbar.css">
+    <link rel="stylesheet" href="/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="/Profile-Edit-Form-1.css">
+    <link rel="stylesheet" href="/Profile-Edit-Form.css">
+    <link rel="stylesheet" href="/Projects-Clean.css">
+    <link rel="stylesheet" href="/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="/sidebar-1.css">
+    <link rel="stylesheet" href="/SIdebar-Responsive-2-1.css">
+    <link rel="stylesheet" href="/SIdebar-Responsive-2.css">
+    <link rel="stylesheet" href="/sidebar.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
 
 <body>
     <main class="page" style="min-height: 100%;">
@@ -22,6 +74,155 @@
                     </nav>
                 </div>
             </div>
-            </section>
-        </main>
+            <header></header>
+            <p style="font-size: 18px; font-weight:bold;  color: rgb(0,0,0);margin-top: 21px;margin-left: 22px;width: 500PX;background: #cbeaf1;padding-left: 14px;">REZERVACIJA TERMINA</p>
+            <div class="container">
+                <div class="row" style="width: 450px;">
+                    <div class="col-md-6" style="width: 499px;">
+                        <div style="width: 100px;">
+                            <p style="        width: 100px;
+        margin-top: 14px;
+        font-weight: bold;
+        color: rgb(0,0,0);
+        text-align: left;
+        margin-left: 104px;">&nbsp;Tip testa:</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 input-column">
+                        <div class="custom-select" style="margin-left:13px" name="vrsta">
+                            <select>
+                                <option value="PCR">PCR</option>
+                                <option value="Serološki">Serološki</option>
+                                <option value="Brzi antigenski">Brzi antigenski</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row" style="width: 450px;">
+                        <div class="col-md-6" style="width: 499px;">
+                            <div style="width: 100px;">
+                                <p style="        font-weight: bold;
+        width: 124px;
+        margin-top: 14px;
+        color: rgb(0,0,0);
+        text-align: left;
+        margin-left: 58px;">&nbsp;Namjena testa:</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 input-column">
+
+                            <div class="custom-select" style="margin-left:0px" name="namjena">
+                                <select>
+                                    <option value="Hitni">Hitni</option>
+                                    <option value="Potrebe prelaska granice">Potrebe prelaska granice</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" style="width: 450px;">
+                    <div class="col-md-6" style="width: 499px;">
+                        <div style="width: 100px;">
+                            <p style="        font-weight: bold;
+        width: 100px;
+        margin-top: 14px;
+        color: rgb(0,0,0);
+        text-align: left;
+        margin-left: 104px;">&nbsp;Lokacija:</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 input-column">
+
+                        <div class="custom-select" style="margin-left:13px" name="lokacija">
+
+                            <select>
+                                <option value="Novo Sarajevo">Novo Sarajevo</option>
+                                <option value="Ilidža">Ilidža</option>
+                                <option value="Stari Grad">Stari Grad</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" style="width: 450px;">
+                    <div class="col-md-6" style="width: 499px;">
+                        <div style="width: 100px;">
+                            <p style="font-weight: bold; width: 140px; margin-top: 14px; color: rgb(0,0,0); text-align: left; margin-left: 56px;">&nbsp;Način plaćanja:</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 input-column">
+
+                        <div class="custom-select" style="margin-left:13px" name="placanje">
+
+                            <select>
+                                <option value="Online">Online</option>
+                                <option value="Na mjestu">Na mjestu</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" style="width: 450px;">
+                    <div class="col-md-6" style="width: 499px;">
+                        <div style="width: 100px;">
+                            <p style="font-weight: bold; width: 100px; margin-top: 14px; color: rgb(0,0,0); text-align: left; margin-left: 123px;">Datum:</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div></div><input type="date" name="datum"style="margin-top: 11px; margin-left:13px">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" style="width: 450px;">
+                    <div class="col-md-6" style="width: 499px;">
+                        <div style="width: 100px;">
+                            <p style="font-weight: bold; width: 100px; margin-top: 14px; color: rgb(0,0,0); text-align: left; margin-left: 116px;">Vrijeme:</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 input-column">
+
+                        <div class="custom-select" style="margin-left:13px" name="vrijem">
+
+                            <select>
+                                <option value="T1">08:00</option>
+                                <option value="T2">10:00</option>
+                                <option value="T3">11:00</option>
+                                <option value="T4">13:00</option>
+                                <option value="T5">14:00</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @using (Html.BeginForm("RezervisiTermin", "Pacijent", FormMethod.Post))
+            {
+                <button class="btn btn-primary" type="submit" style="margin-top: 15px;margin-left: 220px;">Rezerviši</button>
+                
+
+            }
+        </section>
+    </main>
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/chart.min.js"></script>
+    <script src="/assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar.js"></script>
+    <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar-1.js"></script>
+    <script src="/assets/js/-Countdown-BS4-.js"></script>
+    <script src="/assets/js/Profile-Edit-Form.js"></script>
+    <script id="bs-live-reload" data-sseport="64830" data-lastchange="1622792672512" src="/js/livereload.js"></script>
+
 </body>
+
+</html>

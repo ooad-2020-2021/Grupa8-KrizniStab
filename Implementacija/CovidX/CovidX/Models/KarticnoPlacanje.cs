@@ -9,6 +9,8 @@ namespace CovidX.Models
 {
     public class KarticnoPlacanje : Placanje
     {
+       
+
         public KarticnoPlacanje(int placanjeId, DateTime datumUplate, Double iznosUplate, string brojKartice, DateTime datumIsteka) : base(placanjeId, datumUplate, iznosUplate)
         {
             this.brojKartice = brojKartice;

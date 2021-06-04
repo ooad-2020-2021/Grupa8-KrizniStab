@@ -10,6 +10,10 @@ namespace CovidX.Models
   
     public class RezervacijaTestiranja
     {
+        public RezervacijaTestiranja()
+        {
+        }
+
         public RezervacijaTestiranja(int idRezervacije, Lokacija lokacija, int testId, int placanjeId, string jmbgPacijenta, int adminId)
         {
             this.idRezervacije = idRezervacije;

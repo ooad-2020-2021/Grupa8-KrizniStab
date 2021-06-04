@@ -9,6 +9,10 @@ namespace CovidX.Models
 {
     public class MedicinskaSestra : Osoba
     {
+        public MedicinskaSestra()
+        {
+        }
+
         public MedicinskaSestra(string ime, string prezime, string jmbg, DateTime datumRodjenja, string telefon, string mail, Spol spol, String brojKartona, DateTime datumZadnjegTestiranja, Lokacija lokacija, int adminId)
         {    this.ime = ime;
             this.prezime = prezime;

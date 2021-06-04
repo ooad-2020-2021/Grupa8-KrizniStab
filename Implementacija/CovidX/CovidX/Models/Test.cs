@@ -10,7 +10,7 @@ namespace CovidX.Models
   
     public class Test
     {
-        public Test(int idTesta, DateTime datumTestiranja, VrstaTesta vrstaTesta, NamjenaTesta namjenaTesta, Rezultat rezultat, int kartonId)
+        public Test(int idTesta, DateTime datumTestiranja, VrstaTesta vrstaTesta, NamjenaTesta namjenaTesta, Rezultat rezultat, string kartonId)
         {
             this.idTesta = idTesta;
             this.datumTestiranja = datumTestiranja;
@@ -53,13 +53,13 @@ namespace CovidX.Models
         public Rezultat rezultat { get; set; }
         [Required]
         [DisplayName("Broj kartona:")]
-        public int kartonId { get; set; }
+        public string kartonId { get; set; }
 
         public DateTime odrediKrajIzolacije(DateTime datumTestiranja)
         {
             return datumTestiranja.AddDays(14);
         }
 
-
+        public Test() { }
     }
 }

@@ -55,76 +55,85 @@
 </head>
 
 <body>
-    <div class="row register-form">
-        <div class="col-md-8 offset-md-2">
-           
-            <form class="custom-form">
+    <main class="page" style="min-height: 100%;">
+        <section class="clean-block about-us">
+            <div class="row register-form">
+                <div class="col-md-8 offset-md-2">
 
-                <h1>Test</h1>
-                <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">ID testa</label></div>
-                    <div class="col-sm-6 input-column"><input class="form-control" type="text" name="id" style="width: 286px;margin-left: 13px;"></div>
-                </div>
-                <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Datum testiranja</label></div>
-                    <div class="col-sm-6 input-column"><input class="form-control" name="datumTestiranja" type="date" style="width: 286.1px;margin-left: 13px;"></div>
-                </div>
-                <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label">Vrsta testa</label></div>
-                    <div class="col-sm-6 input-column">
-                        <div class="custom-select" style="margin-left:13px" name="vrsta">
-                            <select>
-                                <option value="PCR">PCR</option>
-                                <option value="Serološki">Serološki</option>
-                                <option value="Brzi antigenski">Brzi antigenski</option>
-                            </select>
+                    <form class="custom-form">
+
+                        <h1>Test</h1>
+                        <div class="form-row form-group">
+                            <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">ID testa</label></div>
+                            <div class="col-sm-6 input-column"><input class="form-control" type="text" name="id" style="width: 286px;margin-left: 13px;"></div>
                         </div>
-                    </div>
-                </div>
-                <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="repeat-pawssword-input-field">Namjena testa</label></div>
-                    <div class="col-sm-6 input-column" style="margin-left: 13px;">
-                        <div class="custom-select" name="namjena">
-                            <select>
-                                <option value="Hitni">Hitni</option>
-                                <option value="Potrebe prelaska granice">Potrebe prelaska granice</option>
-                            </select>
+                        <div class="form-row form-group">
+                            <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Datum testiranja</label></div>
+                            <div class="col-sm-6 input-column"><input class="form-control" name="datumTestiranja" type="date" style="width: 286.1px;margin-left: 13px;"></div>
                         </div>
-                    </div>
-                </div>
-                <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="dropdown-input-field">Rezultat</label></div>
-                    <div class="col-sm-4 input-column">
-                        <div class="custom-select" style="margin-left:13px" name="rezultat">
-                            <select>
-                                <option value="Pozitivan">POZITIVAN</option>
-                                <option value="Negativan">NEGATIVAN</option>
-                            </select>
+                        <div class="form-row form-group">
+                            <div class="col-sm-4 label-column"><label class="col-form-label">Vrsta testa</label></div>
+                            <div class="col-sm-6 input-column">
+                                <div class="custom-select" style="margin-left:13px" name="vrsta">
+                                    <select>
+                                        <option value="PCR">PCR</option>
+                                        <option value="Serološki">Serološki</option>
+                                        <option value="Brzi antigenski">Brzi antigenski</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <div class="form-row form-group">
+                            <div class="col-sm-4 label-column"><label class="col-form-label" for="repeat-pawssword-input-field">Namjena testa</label></div>
+                            <div class="col-sm-6 input-column" style="margin-left: 13px;">
+                                <div class="custom-select" name="namjena">
+                                    <select>
+                                        <option value="Hitni">Hitni</option>
+                                        <option value="Potrebe prelaska granice">Potrebe prelaska granice</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row form-group">
+                            <div class="col-sm-4 label-column"><label class="col-form-label" for="dropdown-input-field">Rezultat</label></div>
+                            <div class="col-sm-4 input-column">
+                                <div class="custom-select" style="margin-left:13px" name="rezultat">
+                                    <select>
+                                        <option value="Pozitivan">POZITIVAN</option>
+                                        <option value="Negativan">NEGATIVAN</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row form-group">
+                            <div class="col-sm-4 label-column"><label class="col-form-label" for="dropdown-input-field">ID kartona</label></div>
+                            <div class="col-sm-4 input-column"><input class="form-control" name="idKartona" type="text" style="width: 286.1px;margin-left: 13PX;"></div>
+                        </div>
+
+
+
+                    </form>
+
                 </div>
-                <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="dropdown-input-field">ID kartona</label></div>
-                    <div class="col-sm-4 input-column"><input class="form-control" name="idKartona" type="text" style="width: 286.1px;margin-left: 13PX;"></div>
-                </div>
-                @using (Html.BeginForm("UnesiTest", "MedicinskaSestra", FormMethod.Post))
-                {
-                    <button class="btn btn-light submit-button" type="submit">Unesi test</button>
-                }
-            </form>
-            
             </div>
-    </div>
-    <script src="/assets/js/jquery-3.6.0.min.js"></script>
-    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/chart.min.js"></script>
-    <script src="/assets/js/bs-init.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar.js"></script>
-    <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar-1.js"></script>
-    <script src="/assets/js/-Countdown-BS4-.js"></script>
-    <script src="/assets/js/Profile-Edit-Form.js"></script>
-    <script id="bs-live-reload" data-sseport="51103" data-lastchange="1622650077838" src="/js/livereload.js"></script>
+            @using (Html.BeginForm("UnesiTest", "MedicinskaSestra", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <button class="btn btn-light submit-button" type="submit">Unesi test</button>
+            }
+            </section>
+        </main>
+
+            <script src="/assets/js/jquery-3.6.0.min.js"></script>
+            <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+            <script src="/js/chart.min.js"></script>
+            <script src="/assets/js/bs-init.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+            <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar.js"></script>
+            <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar-1.js"></script>
+            <script src="/assets/js/-Countdown-BS4-.js"></script>
+            <script src="/assets/js/Profile-Edit-Form.js"></script>
+            <script id="bs-live-reload" data-sseport="51103" data-lastchange="1622650077838" src="/js/livereload.js"></script>
 </body>
 
 </html>

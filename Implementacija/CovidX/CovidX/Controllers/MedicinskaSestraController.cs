@@ -215,13 +215,15 @@ namespace CovidX.Controllers
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
                 string date = "'" + test.datumTestiranja.Year + "-" + test.datumTestiranja.Month + "-" + test.datumTestiranja.Day + "'";
-                 var sql = "INSERT INTO  Test Values(" + test.idTesta + "," + date + "," + vrsta + "," +
+               var sql = "INSERT INTO  Test Values(" + test.idTesta + "," + date + "," + vrsta + "," +
                      namjena + "," + rezult + "," + "'" + test.kartonId + "')";
-               
                 connection.Open();
                 using SqlCommand command = new SqlCommand(sql, connection);
                 using SqlDataReader reader = command.ExecuteReader();
-
+                while(reader.Read())
+                {
+                    Console.WriteLine(reader);
+                }
 
             }
             return View();
@@ -299,7 +301,7 @@ namespace CovidX.Controllers
                 using SqlDataReader reader2 = command2.ExecuteReader();
 
             }
-            return View("KartoniPacijenata") ;
+            return View("MedicinskaSestraView") ;
         }
     }
 

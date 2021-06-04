@@ -1,8 +1,35 @@
-﻿@{ 
+﻿@{
     ViewBag.Title = "Kartoni pacijenata";
 }
 
-@foreach(var karton in Model)
+<main class="page" style="min-height: 100%;">
+    <section class="clean-block about-us" style="border-style: none;">
+        <div class="row" style="margin-right: 0px;margin-left: 0px;">
+            <div class="col">
+                <nav class="navbar navbar-light navbar-expand-md">
+                    <div class="container-fluid">
+                        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navcol-1">
+                            <ul class="navbar-nav" style="font-weight:bold">
+                                <li class="nav-item"><a class="nav-link" asp-controller="MedicinskaSestra" asp-action="MedicinskaSestraView">Osoblje profil</a></li>
+                                <li class="nav-item"><a class="nav-link active" asp-controller="MedicinskaSestra" asp-action="KartoniPacijenata">Kartoni pacijenata</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Rezervacija termina</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <ul class="list-group" style="margin-top: 16px;">
+            @foreach (var karton in Model)
+
             {
-    <p>@karton.brojKartona | @karton.kriticnaGrupa | @karton.statusPacijenta</p>
+                <li class="list-group-item"><span>@karton.brojKartona | @karton.kriticnaGrupa | @karton.statusPacijenta</span></li>
+               
+                   @Html.ActionLink("Pregledaj karton", "KartonView", "MedicinskaSestra", new { broj = karton.brojKartona }, null)
+
+
             }
+        </ul>
+    </section>
+    </main>

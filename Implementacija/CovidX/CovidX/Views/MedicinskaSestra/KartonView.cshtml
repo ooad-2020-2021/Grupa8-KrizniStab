@@ -65,7 +65,7 @@
                                                 <p class="labels">Ime</p>
                                             </div>
                                             <div class="col">
-                                                <p class="labels"></p>
+                                                <p class="labels">@ViewBag.ime</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -73,7 +73,7 @@
                                                 <p class="labels">Prezime</p>
                                             </div>
                                             <div class="col">
-                                                <p class="labels"></p>
+                                                <p class="labels">@ViewBag.prezime</p>
                                             </div>
                                         </div>
 
@@ -83,7 +83,7 @@
                                                 <p class="labels">Datum rođenja</p>
                                             </div>
                                             <div class="col">
-                                                <p class="labels"></p>
+                                                <p class="labels">@ViewBag.datumRodjenja</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -91,7 +91,7 @@
                                                 <p class="labels">JMBG</p>
                                             </div>
                                             <div class="col">
-                                                <p class="labels"></p>
+                                                <p class="labels">@ViewBag.jmbg</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -99,17 +99,10 @@
                                                 <p class="labels">Email</p>
                                             </div>
                                             <div class="col">
-                                                <p class="labels"></p>
+                                                <p class="labels">@ViewBag.mail</p>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <p class="labels">Spol</p>
-                                            </div>
-                                            <div class="col">
-                                                <p class="labels"></p>
-                                            </div>
-                                        </div>
+                                      
                                     </div>
                                 </div>
                                 <div class="row">
@@ -117,7 +110,7 @@
                                         <p class="labels">Kritična grupa</p>
                                     </div>
                                     <div class="col">
-                                        <p class="labels"></p>
+                                        <p class="labels">@ViewBag.kriticnaGrupa</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -125,7 +118,7 @@
                                         <p class="labels">Status</p>
                                     </div>
                                     <div class="col">
-                                        <p class="labels"></p>
+                                        <p class="labels">@ViewBag.status</p>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +128,15 @@
                         <header></header>
                         <p style="font-weight: bold;color: rgb(6,6,6);text-align: center;font-size: 22.6px;">TESTOVI</p>
                         <button class="btn btn-primary" type="submit" style="margin-left: 91px;margin-top: 18px;background: rgb(68,172,186);font-weight: normal;font-size: 14px;border-style: none;">DODAJ TEST</button>
-                        <ul class="list-group" style="margin-top: 16px;"></ul>
+                        <ul class="list-group" style="margin-top: 16px;">
+                            @foreach (var test in Model)
+
+                            {
+                                <li class="list-group-item"><span>@test.datumTestiranja | @test.vrstaTesta | @test.namjenaTesta |
+                                     @test.rezultat</span></li>
+
+                            }
+                        </ul>
                     </div>
                 </div>
             }

@@ -19,5 +19,7 @@ namespace CovidX.Models
         {
             this.statusPacijenta = statusPacijenta;
         }
+
+        
     }
 }

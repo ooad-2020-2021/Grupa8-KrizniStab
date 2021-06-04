@@ -20,11 +20,6 @@ namespace CovidX.Controllers
         {
             _configuration = configuration;
         }
-
-        public IActionResult KartonView()
-        {
-            return View();
-        }
         public IActionResult UnosRezultataTesta()
         {
             return View();
@@ -66,13 +61,13 @@ namespace CovidX.Controllers
             return medSestra;
         }
 
-          private IActionResult KartoniPacijenata()
+          public IActionResult KartoniPacijenata()
         {
 
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
                 //brojKartona, kriticnaGrupa, statusPacijenta
-                var sql = "SELECT * FROM [dbo].[Karton pacijenata]";
+                var sql = "SELECT * FROM [dbo].[Karton pacijenta]";
                 connection.Open();
                 using SqlCommand command = new SqlCommand(sql, connection);
                 using SqlDataReader reader = command.ExecuteReader();
@@ -98,6 +93,86 @@ namespace CovidX.Controllers
                 }
             }
             return View(kartoniPacijenata);
+        }
+        public IActionResult KartonView(string broj)
+        {
+            KartonPacijenta karton = new KartonPacijenta("", false, StatusPacijenta.OPORAVLJEN);
+            Pacijent pacijent = new Pacijent();
+            foreach (var k in kartoniPacijenata)
+            {
+                if (k.brojKartona == broj)
+                {
+                    karton = k;
+                    break;
+                }
+            }
+            //Trazimo pacijenta
+
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+            {
+             
+                var sql = "SELECT jmbg, ime, prezime, datumRodjenja, telefon, mail FROM Pacijent WHERE brojKartona = '" + broj +"'";
+                connection.Open();
+                using SqlCommand command = new SqlCommand(sql, connection);
+                using SqlDataReader reader = command.ExecuteReader();
+               
+                while (reader.Read())
+                {
+                    pacijent.jmbg = (string)reader["jmbg"];
+                    pacijent.ime = reader["ime"].ToString();
+                    pacijent.prezime = reader["prezime"].ToString();
+                    pacijent.datumRodjenja = (DateTime)reader["datumRodjenja"];
+                    pacijent.mail = reader["mail"].ToString();
+                    pacijent.telefon = reader["telefon"].ToString();
+                    pacijent.brojKartona = broj;
+
+                }
+            }
+            ViewBag.ime = pacijent.ime;
+            ViewBag.jmbg = pacijent.jmbg;
+            ViewBag.prezime = pacijent.prezime;
+            ViewBag.datumRodjenja = pacijent.datumRodjenja;
+            ViewBag.mail = pacijent.mail;
+            ViewBag.kriticnaGrupa = karton.kriticnaGrupa;
+            ViewBag.status = karton.statusPacijenta;
+
+            List<Test> testovi = new List<Test>();
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+            {
+                var sql = "SELECT * FROM Test WHERE brojKartona = '" + broj + "'";
+                connection.Open();
+                using SqlCommand command = new SqlCommand(sql, connection);
+                using SqlDataReader reader = command.ExecuteReader();
+                Test test = new Test();
+                while (reader.Read())
+                {
+                    string datumTestiranja = reader["datumTestiranja"].ToString();
+                    string vrsta = reader["vrstaTesta"].ToString();
+                    string namjena = reader["namjenaTesta"].ToString();
+                    string rezultat = reader["rezultat"].ToString();
+                    //2021-05-25
+                    string godina = datumTestiranja.Substring(0, 4);
+                    string mjesec = datumTestiranja.Substring(5, 2);
+                    string dan = datumTestiranja.Substring(8, 2);
+                    if (dan[0] == '0') dan = dan[1].ToString();
+
+                    DateTime datumT = DateTime.Today;
+
+                    VrstaTesta vrstaTesta = VrstaTesta.BRZI_ANTIGENSKI;
+                    if (vrsta == "0") vrstaTesta = VrstaTesta.PCR;
+                    else if (vrsta == "1") vrstaTesta = VrstaTesta.SEROLOSKI;
+
+                    NamjenaTesta namjenaTesta = NamjenaTesta.POTREBE_PRELASKA_GRANICE;
+                    if (namjena == "0") namjenaTesta = NamjenaTesta.HITNI;
+
+                    Rezultat rez = Rezultat.POZITIVAN;
+                    if (rezultat == "2") rez = Rezultat.NEGATIVAN;
+
+                    test = new Test(0, datumT, vrstaTesta, namjenaTesta, rez, broj);
+                    testovi.Add(test);
+                }
+            }
+            return View(testovi);
         }
     }
 

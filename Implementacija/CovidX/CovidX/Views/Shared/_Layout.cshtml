@@ -38,7 +38,13 @@
                                     <a class="nav-link text-dark" asp-area="" asp-controller="MedicinskaSestra" asp-action="MedicinskaSestraView">Moja stranica</a>
                                 </li>
                             }
-                            /*dodati za admina*/
+                            @if (User.IsInRole("Administrator"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="MedicinskaSestra" asp-action="MedicinskaSestraView">Moja stranica</a>
+                                </li>
+                            }
+
                         </ul>
                     </div>
                 </div>

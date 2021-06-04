@@ -229,6 +229,7 @@ namespace CovidX.Controllers
             return View();
         }
         [HttpPost]
+        [HttpGet]
         public IActionResult RezervisiTermin(IFormCollection formCollection)
         {
             string vrstaTesta = Request.Form["vrsta"];

@@ -67,12 +67,12 @@
                 </div>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Datum testiranja</label></div>
-                    <div class="col-sm-6 input-column"><input class="form-control" type="date" style="width: 286.1px;margin-left: 13px;"></div>
+                    <div class="col-sm-6 input-column"><input class="form-control" name="datumTestiranja" type="date" style="width: 286.1px;margin-left: 13px;"></div>
                 </div>
                 <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="pawssword-input-field">Vrsta testa</label></div>
+                    <div class="col-sm-4 label-column"><label class="col-form-label">Vrsta testa</label></div>
                     <div class="col-sm-6 input-column">
-                        <div class="custom-select" style="margin-left:13px">
+                        <div class="custom-select" style="margin-left:13px" name="vrsta">
                             <select>
                                 <option value="PCR">PCR</option>
                                 <option value="Serološki">Serološki</option>
@@ -84,7 +84,7 @@
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="repeat-pawssword-input-field">Namjena testa</label></div>
                     <div class="col-sm-6 input-column" style="margin-left: 13px;">
-                        <div class="custom-select">
+                        <div class="custom-select" name="namjena">
                             <select>
                                 <option value="Hitni">Hitni</option>
                                 <option value="Potrebe prelaska granice">Potrebe prelaska granice</option>
@@ -95,7 +95,7 @@
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="dropdown-input-field">Rezultat</label></div>
                     <div class="col-sm-4 input-column">
-                        <div class="custom-select" style="margin-left:13px">
+                        <div class="custom-select" style="margin-left:13px" name="rezultat">
                             <select>
                                 <option value="Pozitivan">POZITIVAN</option>
                                 <option value="Negativan">NEGATIVAN</option>
@@ -105,10 +105,11 @@
                 </div>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="dropdown-input-field">ID kartona</label></div>
-                    <div class="col-sm-4 input-column"><input class="form-control" type="text" style="width: 286.1px;margin-left: 13PX;"></div>
+                    <div class="col-sm-4 input-column"><input class="form-control" name="idKartona" type="text" style="width: 286.1px;margin-left: 13PX;"></div>
                 </div>
-                @using (Html.BeginForm("VratiNaKarton", "MedicinskaSestra", FormMethod.Post))
-                {<button class="btn btn-light submit-button" type="submit">Unesi test</button>
+                @using (Html.BeginForm("UnesiTest", "MedicinskaSestra", FormMethod.Post))
+                {
+                    <button class="btn btn-light submit-button" type="submit">Unesi test</button>
                 }
             </form>
             

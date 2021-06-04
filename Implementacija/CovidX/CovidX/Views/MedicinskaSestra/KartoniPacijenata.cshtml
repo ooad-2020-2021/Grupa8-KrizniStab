@@ -13,7 +13,7 @@
                             <ul class="navbar-nav" style="font-weight:bold">
                                 <li class="nav-item"><a class="nav-link" asp-controller="MedicinskaSestra" asp-action="MedicinskaSestraView">Osoblje profil</a></li>
                                 <li class="nav-item"><a class="nav-link active" asp-controller="MedicinskaSestra" asp-action="KartoniPacijenata">Kartoni pacijenata</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Rezervacija termina</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-controller="MedicinskaSestra" asp-action="RezervacijaTestiranjaMed">Rezervacija termina</a></li>
                             </ul>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
             {
                 <li class="list-group-item"><span>@karton.brojKartona | @karton.kriticnaGrupa | @karton.statusPacijenta</span></li>
                
-                   @Html.ActionLink("Pregledaj karton", "KartonView", "MedicinskaSestra", new { broj = karton.brojKartona }, null)
+                   @Html.ActionLink("Pregledaj karton", "KartonView", "MedicinskaSestra", new { brojK = karton.brojKartona }, null)
 
 
             }

@@ -40,7 +40,6 @@
     <main class="page" style="min-height: 100%;">
         <section class="clean-block about-us" style="border-style: none;">
             
-                @using (Html.BeginForm("DodajTest", "MedicinskaSestra", FormMethod.Post)) { 
                     <div class="row" style="margin-right: 0px;margin-left: 0px;">
                         <div class="col">
                             <nav class="navbar navbar-light navbar-expand-md">
@@ -127,13 +126,19 @@
                     <div class="col">
                         <header></header>
                         <p style="font-weight: bold;color: rgb(6,6,6);text-align: center;font-size: 22.6px;">TESTOVI</p>
-                        <button class="btn btn-primary" type="submit" style="margin-left: 91px;margin-top: 18px;background: rgb(68,172,186);font-weight: normal;font-size: 14px;border-style: none;">DODAJ TEST</button>
+
+                        @Html.ActionLink("Dodaj test", "UnosRezultataTesta", "MedicinskaSestra", null, null)
+
                         <ul class="list-group" style="margin-top: 16px;">
                             @foreach (var test in Model)
 
                             {
-                                <li class="list-group-item"><span>@test.datumTestiranja | @test.vrstaTesta | @test.namjenaTesta |
-                                     @test.rezultat</span></li>
+                                <li class="list-group-item">
+                                    <span>
+                                        @test.datumTestiranja | @test.vrstaTesta | @test.namjenaTesta |
+                                        @test.rezultat
+                                    </span>
+                                </li>
 
                             }
                         </ul>

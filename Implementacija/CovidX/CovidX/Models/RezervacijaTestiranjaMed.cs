@@ -6,6 +6,10 @@ namespace CovidX.Models
 { 
     public class RezervacijaTestiranjaMed
     {
+        public RezervacijaTestiranjaMed()
+        {
+        }
+
         public RezervacijaTestiranjaMed(DateTime datumTestiranja, VrstaTesta vrstaTesta, NamjenaTesta namjenaTesta, string jmbgMed, int testId)
         {
             this.datumTestiranja = datumTestiranja;

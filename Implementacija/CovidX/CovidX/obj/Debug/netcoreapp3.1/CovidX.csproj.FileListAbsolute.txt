@@ -285,3 +285,5 @@ C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\b
 C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\Pacijent\OnlinePlacanjeView.cshtml.g.cs
 C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\Placanje\OnlinePlacanjeView.cshtml.g.cs
 C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\MedicinskaSestra\KartoniPacijenata.cshtml.g.cs
+C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\MedicinskaSestra\UnesiTest.cshtml.g.cs
+C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\MedicinskaSestra\RezervacijaTestiranjaMed.cshtml.g.cs

@@ -16,6 +16,7 @@ namespace CovidX.Controllers
         private readonly IConfiguration _configuration;
         MedicinskaSestra medSestra = new MedicinskaSestra();
         List<KartonPacijenta> kartoniPacijenata = new List<KartonPacijenta>();
+        private string broj = "";
         public MedicinskaSestraController(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -24,7 +25,10 @@ namespace CovidX.Controllers
         {
             return View();
         }
-        [HttpGet]
+        public IActionResult RezervacijaTestiranjaMed()
+        {
+            return View();
+        }
         public IActionResult MedicinskaSestraView()
         {
             medSestra = GetMed();
@@ -35,7 +39,7 @@ namespace CovidX.Controllers
             ViewBag.mail = medSestra.mail;
             ViewBag.telefon = medSestra.telefon;
             return View();
-          
+
         }
         private MedicinskaSestra GetMed()
         {
@@ -55,13 +59,13 @@ namespace CovidX.Controllers
                     medSestra.datumRodjenja = (DateTime)reader["datumRodjenja"];
                     medSestra.mail = reader["mail"].ToString();
                     medSestra.telefon = reader["telefon"].ToString();
-                    
+
                 }
             }
             return medSestra;
         }
 
-          public IActionResult KartoniPacijenata()
+        public IActionResult KartoniPacijenata()
         {
 
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
@@ -94,8 +98,10 @@ namespace CovidX.Controllers
             }
             return View(kartoniPacijenata);
         }
-        public IActionResult KartonView(string broj)
+        public IActionResult KartonView(string brojK)
+         
         {
+            broj = brojK;
             KartonPacijenta karton = new KartonPacijenta("", false, StatusPacijenta.OPORAVLJEN);
             Pacijent pacijent = new Pacijent();
             foreach (var k in kartoniPacijenata)
@@ -110,12 +116,12 @@ namespace CovidX.Controllers
 
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
-             
-                var sql = "SELECT jmbg, ime, prezime, datumRodjenja, telefon, mail FROM Pacijent WHERE brojKartona = '" + broj +"'";
+
+                var sql = "SELECT jmbg, ime, prezime, datumRodjenja, telefon, mail FROM Pacijent WHERE brojKartona = '" + broj + "'";
                 connection.Open();
                 using SqlCommand command = new SqlCommand(sql, connection);
                 using SqlDataReader reader = command.ExecuteReader();
-               
+
                 while (reader.Read())
                 {
                     pacijent.jmbg = (string)reader["jmbg"];
@@ -135,7 +141,7 @@ namespace CovidX.Controllers
             ViewBag.mail = pacijent.mail;
             ViewBag.kriticnaGrupa = karton.kriticnaGrupa;
             ViewBag.status = karton.statusPacijenta;
-
+            ViewBag.brojKartona = broj;
             List<Test> testovi = new List<Test>();
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
@@ -173,6 +179,127 @@ namespace CovidX.Controllers
                 }
             }
             return View(testovi);
+        }
+        [HttpPost]
+        public IActionResult UnesiTest(IFormCollection formCollection)
+        {
+
+            string id = Request.Form["id"];
+            string datumTestiranja = Request.Form["datumTestiranja"];
+
+            string vrstaTesta = Request.Form["vrstaTesta"].ToString();
+            string namjenaTesta = Request.Form["namjena"].ToString();
+            string rezultat = Request.Form["rezultat"];
+            broj = Request.Form["idKartona"].ToString();
+            Test test = new Test();
+            int vrsta = 0;
+            if (vrstaTesta == "PCR")
+                vrsta = 0;
+            else if (vrstaTesta == "Serološki")
+                vrsta = 1;
+            else vrsta = 2;
+
+            int namjena = 0;
+            if (namjenaTesta == "Hitni")
+                namjena = 0;
+            else namjena = 1;
+            test.datumTestiranja = DateTime.Today.AddDays(-2);
+            Random ran = new Random();
+            test.idTesta = ran.Next(1356) * 2;
+
+            int rezult = 0;
+            if (test.idTesta % 2 == 0) rezult = 0;
+            else rezult = 1;
+
+            test.kartonId = "H-1";
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+            {
+                string date = "'" + test.datumTestiranja.Year + "-" + test.datumTestiranja.Month + "-" + test.datumTestiranja.Day + "'";
+                 var sql = "INSERT INTO  Test Values(" + test.idTesta + "," + date + "," + vrsta + "," +
+                     namjena + "," + rezult + "," + "'" + test.kartonId + "')";
+               
+                connection.Open();
+                using SqlCommand command = new SqlCommand(sql, connection);
+                using SqlDataReader reader = command.ExecuteReader();
+
+
+            }
+            return View();
+        }
+        [HttpPost]
+        public IActionResult RezervisiTermin(IFormCollection formCollection)
+        {
+            string vrstaTesta = Request.Form["vrsta"];
+            string namjenaTesta = Request.Form["namjena"];
+            string lokacija = Request.Form["lokacija"];
+          
+
+            RezervacijaTestiranjaMed rezervacija = new RezervacijaTestiranjaMed();
+            Test test = new Test();
+            int vrsta = 0;
+            if (vrstaTesta == "PCR")
+                vrsta = 0;
+            else if (vrstaTesta == "Serološki")
+                vrsta = 1;
+            else vrsta = 2;
+
+            int namjena = 0;
+            if (namjenaTesta == "Hitni")
+                namjena = 0;
+            else namjena = 1;
+
+            
+            test.datumTestiranja = DateTime.Today.AddDays(1);
+            MedicinskaSestra medSestra = new MedicinskaSestra();
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+            {
+                var sql = "SELECT jmbg, ime, prezime, datumRodjenja, telefon, mail, brojKartona FROM [dbo].[Medicinska sestra] WHERE ime = '" + User.Identity.Name + "'";
+                connection.Open();
+                using SqlCommand command = new SqlCommand(sql, connection);
+                using SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    medSestra.jmbg = (string)reader["jmbg"];
+                    medSestra.ime = reader["ime"].ToString();
+                    medSestra.prezime = reader["prezime"].ToString();
+                    medSestra.datumRodjenja = (DateTime)reader["datumRodjenja"];
+                    medSestra.mail = reader["mail"].ToString();
+                    medSestra.telefon = reader["telefon"].ToString();
+                    medSestra.brojKartona = reader["brojKartona"].ToString();
+                }
+            }
+            test.kartonId = medSestra.brojKartona;
+
+            Random random = new Random();
+            int testId = random.Next(2000) * 3;
+            test.idTesta = testId;
+            rezervacija.testId = test.idTesta;
+            int rezult = 0;
+            if (testId % 2 == 0) rezult = 0;
+            else rezult = 1;
+            rezervacija.datumTestiranja = DateTime.Today;
+
+
+            rezervacija.jmbgMed = medSestra.jmbg;
+
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+            {
+                string date = "'" + test.datumTestiranja.Year + "-" + test.datumTestiranja.Month + "-" + test.datumTestiranja.Day + "'";
+                string datumT = "'" + rezervacija.datumTestiranja.Year + "-" + rezervacija.datumTestiranja.Month + "-" + rezervacija.datumTestiranja.Day + "'";
+                var sql1 = "INSERT INTO  Test Values(" + test.idTesta + "," + date + "," + vrsta + "," +
+                    namjena + "," + rezult + "," + "'" + test.kartonId + "')";
+                var sql2 = "Insert INTO [dbo].[Rezervacija testiranja za medicinsko osoblje] Values(" +
+                   datumT + ","  + vrsta + "," + namjena + "," + rezervacija.jmbgMed + ")";
+                connection.Open();
+                using SqlCommand command1 = new SqlCommand(sql1, connection);
+                using SqlDataReader reader1 = command1.ExecuteReader();
+                connection.Close();
+                connection.Open();
+                using SqlCommand command2 = new SqlCommand(sql2, connection);
+                using SqlDataReader reader2 = command2.ExecuteReader();
+
+            }
+                return View("MedicinskaSestraView");
         }
     }
 

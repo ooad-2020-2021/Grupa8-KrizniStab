@@ -144,11 +144,6 @@ namespace CovidX.Controllers
          
 
 
-
-
-
-
-
             if (placanje == "Na mjestu") return View("MapaView");
             else 
             return View("OnlinePlacanjeView");

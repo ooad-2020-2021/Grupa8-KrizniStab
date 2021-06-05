@@ -38,10 +38,10 @@
                                     <a class="nav-link text-dark" asp-area="" asp-controller="MedicinskaSestra" asp-action="MedicinskaSestraView">Moja stranica</a>
                                 </li>
                             }
-                            @if (User.IsInRole("Administrator"))
+                            @if (User.IsInRole("Admin"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="MedicinskaSestra" asp-action="MedicinskaSestraView">Moja stranica</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="AdminView">Moja stranica</a>
                                 </li>
                             }
 

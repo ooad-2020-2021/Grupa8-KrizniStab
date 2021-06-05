@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Medicinsko osoblje";
+}
+
+<main class="page" style="min-height: 100%;">
+    <link rel="stylesheet" href="admin.css">
+    <section class="clean-block about-us" style="border-style: none;">
+       
+   
+        <div class="row" style="margin-right: 0px;margin-right: 0px;">
+            <div class="col">
+                <nav class="navbar navbar-light navbar-expand-md" >
+                    <div class="container-fluid">
+                        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navcol-1" align="right">
+                            <ul class="navbar-nav" style="font-weight:bold">
+                                <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="UnosMedicinskogOsoblja">Unesi</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-controller="AdminController" asp-action="Termini">Prikazi termine</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="AdminView">Pocetna</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+        <table style="width:100%">
+            <tr>
+                <th>Username</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Email</th>
+                <th>Dostupan</th>
+                <th>Datum zadnjeg testiranja</th>
+            </tr>
+
+            @foreach (var medSestra in Model)
+
+            {
+                <tr>
+                    <td>@medSestra.UserName</td>
+                    <td>@medSestra.ime</td>
+                    <td>@medSestra.prezime</td>
+                    <td>@medSestra.mail</td>
+                    <td>@medSestra.Status</td>
+                    <td>@medSestra.datumZadnjegTestiranja</td>                    
+                </tr>
+              
+
+            }
+        </table>       
+        
+    </section>
+</main>

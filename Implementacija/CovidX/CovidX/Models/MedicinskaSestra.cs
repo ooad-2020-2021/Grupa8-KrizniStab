@@ -9,12 +9,14 @@ namespace CovidX.Models
 {
     public class MedicinskaSestra : Osoba
     {
+        private StatusOsoblja status;
+        private string userName;
         public MedicinskaSestra()
         {
         }
 
         public MedicinskaSestra(string ime, string prezime, string jmbg, DateTime datumRodjenja, string telefon, string mail, Spol spol, String brojKartona, DateTime datumZadnjegTestiranja, Lokacija lokacija, int adminId)
-        {    this.ime = ime;
+        {   this.ime = ime;
             this.prezime = prezime;
             this.jmbg = jmbg;
             this.datumRodjenja = datumRodjenja;
@@ -44,6 +46,7 @@ namespace CovidX.Models
         {
             get; set;
         }
-
-     }
+        public StatusOsoblja Status { get => status; set => status = value; }
+        public string UserName { get => userName; set => userName = value; }
+    }
 }

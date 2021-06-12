@@ -42,7 +42,7 @@ namespace CovidX.Controllers
                     medSestra.jmbg = (string)reader["jmbg"];
                     medSestra.ime = reader["ime"].ToString();
                     medSestra.prezime = reader["prezime"].ToString();
-                    medSestra.datumRodjenja = (DateTime)reader["datumRodjenja"];
+                    medSestra.datumRodjenja = DateTime.Parse(reader["datumRodjenja"].ToString());
                     medSestra.mail = reader["mail"].ToString();
                     medSestra.telefon = reader["telefon"].ToString();
                     medSestra.datumZadnjegTestiranja = (DateTime)reader["datumZadnjegTestiranja"];
@@ -107,8 +107,8 @@ namespace CovidX.Controllers
             string jmbg = Request.Form["jmbg"];
             string mail = Request.Form["mail"];
             string lokacija1 = Request.Form["lokacija"];
-            string UserName = Request.Form["UserName"];
-            string password = Request.Form["Password"];
+            string UserName = Request.Form["username"];
+            string password = Request.Form["password"];
             string datumRodjenja = Request.Form["datumRodjenja"];
             string spol1 = Request.Form["spol"];
             string brojKartona = Request.Form["brojKartona"];
@@ -133,7 +133,7 @@ namespace CovidX.Controllers
 
             else if (lokacija1 == "Stari Grad") { lokacija = Lokacija.StariGrad; }
 
-            MedicinskaSestra med = new MedicinskaSestra(ime, prezime, jmbg, DateTime.Today, telefon, mail, spol, brojKartona, DateTime.Today.AddDays(-10), lokacija, 1);
+            MedicinskaSestra med = new MedicinskaSestra(ime, prezime, jmbg, DateTime.Parse(datumRodjenja), telefon, mail, spol, brojKartona, DateTime.Today.AddDays(-10), lokacija, 1);
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
                 string dateRodjenja = med.datumRodjenja.Year + "-" + med.datumRodjenja.Month + "-" + med.datumRodjenja.Day ;
@@ -141,17 +141,19 @@ namespace CovidX.Controllers
                 var sql = "INSERT INTO [dbo].[Medicinska sestra] (jmbg,ime,prezime,datumRodjenja,telefon,mail,spol,brojKartona,datumZadnjegTestiranja,lokacija,adminId) Values('"
                 + med.jmbg + "','" + med.ime + "','" + med.prezime + "','" +dateRodjenja + "','" + med.telefon + "','" + med.mail + "','" + "0" + "','" + med.brojKartona
                 + "','" + dateZadnjegTestiranja + "','" + "0" + "','" + med.adminId + "')";
+                var karton = "INSERT INTO [dbo].[Karton osoblja](brojKartona, kriticnaGrupa, statusOsoblja) VALUES('" + med.brojKartona + "', " + 0 + "," + 0 + ")";
                 connection.Open();
                 using SqlCommand command = new SqlCommand(sql, connection);
                 using SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    Console.WriteLine(reader);
-                }
+
+                connection.Close();
+                connection.Open();
+                using SqlCommand command2 = new SqlCommand(karton, connection);
+                using SqlDataReader reader2 = command2.ExecuteReader();
 
             }
             medicinskoOsoblje.Add(med);
-            return View();
+            return RedirectToAction("AdminView", "Admin");
         }
 
         // GET: AdminController

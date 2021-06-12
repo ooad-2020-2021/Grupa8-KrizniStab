@@ -3,40 +3,37 @@
     ViewData["Title"] = "UnosMedicinskogOsoblja";
 }
 
-<h4>Medicinsko Osoblje</h4>
+<h4>Unesi osoblje</h4>
 <hr />
 <body>
-    @using (Html.BeginForm("UnesiMedOsoblje", "Admin", FormMethod.Post))
-    {
-        <form class="custom-form">
-          
-                        <div class="form-row form-group">
-                            <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Ime</label></div>
-                            <div class="col-sm-6 input-column"><input class="form-control" type="text" name="ime" style="width: 286px;margin-left: 13px;"></div>
-                        </div>
-                   
-                        <div class="form-row form-group">
-                            <div class="col-sm-4 label-column"><label class="col-form-label" for="Surname-input-field">Prezime</label></div>
-                            <div class="col-sm-6 input-column"><input class="form-control" type="text" name="prezime" style="width: 286px;margin-left: 13px;"></div>
-                        </div>
-                 
-           
-         
+
+    <main class="page" style="width:500px;">
+        @using (Html.BeginForm("UnesiMedOsoblje", "Admin", FormMethod.Post))
+        {
+
             <div class="form-row form-group">
-                <div class="col-sm-4 label-column"><label class="col-form-label" for="jmbg-input-field">JMBG</label></div>
+                <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field" style="font-weight:bold">Ime</label></div>
+                <div class="col-sm-6 input-column"><input class="form-control" type="text" name="ime" style="width: 286px;margin-left: 13px;"></div>
+            </div>
+            <div class="form-row form-group">
+                <div class="col-sm-4 label-column"><label class="col-form-label" for="Surname-input-field" style="font-weight:bold">Prezime</label></div>
+                <div class="col-sm-6 input-column"><input class="form-control" type="text" name="prezime" style="width: 286px;margin-left: 13px;"></div>
+            </div>
+            <div class="form-row form-group">
+                <div class="col-sm-4 label-column"><label class="col-form-label" for="jmbg-input-field" style="font-weight:bold">JMBG</label></div>
                 <div class="col-sm-6 input-column"><input class="form-control" type="text" name="jmbg" style="width: 286px;margin-left: 13px;"></div>
             </div>
             <div class="form-row form-group">
-                <div class="col-sm-4 label-column"><label class="col-form-label" for="username-input-field">Username</label></div>
+                <div class="col-sm-4 label-column"><label class="col-form-label" for="username-input-field" style="font-weight:bold">Username</label></div>
                 <div class="col-sm-6 input-column"><input class="form-control" type="text" name="username" style="width: 286px;margin-left: 13px;"></div>
             </div>
             <div class="form-row form-group">
-                <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Email</label></div>
+                <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field" style="font-weight:bold">Email</label></div>
                 <div class="col-sm-6 input-column"><input class="form-control" name="mail" type="email" style="width: 286.1px;margin-left: 13px;"></div>
             </div>
 
             <div class="form-row form-group">
-                <div class="col-sm-4 label-column"><label class="col-form-label">Lokacija</label></div>
+                <div class="col-sm-4 label-column"><label class="col-form-label" style="font-weight:bold">Lokacija</label></div>
                 <div class="col-sm-6 input-column" style="width: 286.1px;margin-left: 13px;">
                     <div class="custom-select" style="width: 286.1px;" name="lokacija">
                         <select name="lokacija">
@@ -48,44 +45,42 @@
                 </div>
             </div>
             <div class="form-row form-group">
-                <div class="col-sm-4 label-column"><label class="col-form-label" for="date-input-field">Datum rođenja</label></div>
+                <div class="col-sm-4 label-column"><label class="col-form-label" for="date-input-field" style="font-weight:bold">Datum rođenja</label></div>
                 <div class="col-sm-6 input-column"><input class="form-control" name="datumRodjenja" type="date" style="width: 286.1px;margin-left: 13px;"></div>
             </div>
             <div class="form-row form-group">
-                <div class="col-sm-4 label-column"><label class="col-form-label" for="telefon-input-field">Broj telefona</label></div>
+                <div class="col-sm-4 label-column"><label class="col-form-label" for="telefon-input-field" style="font-weight:bold">Broj telefona</label></div>
                 <div class="col-sm-6 input-column"><input class="form-control" name="telefon" type="text" style="width: 286.1px;margin-left: 13px;"></div>
             </div>
             <div class="form-row form-group">
-                <div class="col-sm-4 label-column"><label class="col-form-label" for="spol-input-field">Spol</label></div>
+                <div class="col-sm-4 label-column"><label class="col-form-label" for="spol-input-field" style="font-weight:bold">Spol</label></div>
                 <div class="col-sm-6 input-column"><input class="form-control" name="spol" type="text" style="width: 286.1px;margin-left: 13px;"></div>
             </div>
             <div class="form-row form-group">
-                <div class="col-sm-4 label-column"><label class="col-form-label" for="brojKartona-input-field">Broj kartona</label></div>
+                <div class="col-sm-4 label-column"><label class="col-form-label" for="brojKartona-input-field" style="font-weight:bold">Broj kartona</label></div>
                 <div class="col-sm-6 input-column"><input class="form-control" name="brojKartona" type="text" style="width: 286.1px;margin-left: 13px;"></div>
             </div>
             <div class="form-row form-group">
-                <div class="col-sm-4 label-column"><label class="col-form-label" for="password-input-field">Password</label></div>
+                <div class="col-sm-4 label-column"><label class="col-form-label" for="password-input-field" style="font-weight:bold">Password</label></div>
                 <div class="col-sm-6 input-column"><input class="form-control" name="password" type="password" style="width: 286.1px;margin-left: 13px;"></div>
             </div>
 
-        </form>
 
-        @Html.AntiForgeryToken()
-        <input type="submit" value="Kreiraj" class="btn btn-primary" />
+            @Html.AntiForgeryToken()
+            <input type="submit" value="Unesi" class="btn btn-primary" style="margin-left:200px" />
 
-    }
-        <script src="/assets/js/jquery-3.6.0.min.js"></script>
-        <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/js/chart.min.js"></script>
-        <script src="/assets/js/bs-init.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-        <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar.js"></script>
-        <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar-1.js"></script>
-        <script src="/assets/js/-Countdown-BS4-.js"></script>
-        <script src="/assets/js/Profile-Edit-Form.js"></script>
-        <script id="bs-live-reload" data-sseport="51103" data-lastchange="1622650077838" src="/js/livereload.js"></script>
+        }
+    </main>
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/chart.min.js"></script>
+    <script src="/assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar.js"></script>
+    <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar-1.js"></script>
+    <script src="/assets/js/-Countdown-BS4-.js"></script>
+    <script src="/assets/js/Profile-Edit-Form.js"></script>
+    <script id="bs-live-reload" data-sseport="51103" data-lastchange="1622650077838" src="/js/livereload.js"></script>
 
 
 </body>
-
-

@@ -14,9 +14,10 @@
                         <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                         <div class="collapse navbar-collapse" id="navcol-1" align="right">
                             <ul class="navbar-nav" style="font-weight:bold">
-                                <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="UnosMedicinskogOsoblja">Unesi</a></li>
-                                <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="Termini">Prikazi termine</a></li>
-                                <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="AdminView">Pocetna</a></li>
+                                <li class="nav-item"><a class="nav-link active" asp-controller="Admin" asp-action="AdminView">Početna</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="UnosMedicinskogOsoblja">Unesi osoblje</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="Termini">Prikaži termine</a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -26,7 +27,7 @@
 
 
         <table style="width:100%">
-            <tr>
+            <tr style="color:blue">
                 <th>Username</th>
                 <th>Ime</th>
                 <th>Prezime</th>

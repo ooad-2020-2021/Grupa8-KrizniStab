@@ -287,7 +287,6 @@ C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\o
 C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\MedicinskaSestra\KartoniPacijenata.cshtml.g.cs
 C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\MedicinskaSestra\UnesiTest.cshtml.g.cs
 C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\MedicinskaSestra\RezervacijaTestiranjaMed.cshtml.g.cs
-C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\Pacijent\RezervisiTermin.cshtml.g.cs
 C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\Pacijent\Plati.cshtml.g.cs
 C:\Users\XY\Desktop\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\CovidX.dll
 C:\Users\XY\Desktop\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\CovidX.pdb
@@ -486,3 +485,6 @@ C:\Users\XY\Desktop\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\net
 C:\Users\XY\Desktop\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Termini.cshtml.g.cs
 C:\Users\XY\Desktop\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\Admin\UnosMedicinskogOsoblja.cshtml.g.cs
 C:\Users\XY\Desktop\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AdminView.cshtml.g.cs
+C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AdminView.cshtml.g.cs
+C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Termini.cshtml.g.cs
+C:\Users\Selma\Documents\GitHub\Grupa8-KrizniStab\Implementacija\CovidX\CovidX\obj\Debug\netcoreapp3.1\Razor\Views\Admin\UnosMedicinskogOsoblja.cshtml.g.cs

@@ -184,13 +184,13 @@ namespace CovidX.Controllers
         public IActionResult UnesiTest(IFormCollection formCollection)
         {
 
-            string id = Request.Form["id"];
-            string datumTestiranja = Request.Form["datumTestiranja"];
+            string id = formCollection["id"];
+            string datumTestiranja = formCollection["datumTestiranja"];
 
-            string vrstaTesta = Request.Form["vrstaTesta"].ToString();
-            string namjenaTesta = Request.Form["namjena"].ToString();
-            string rezultat = Request.Form["rezultat"];
-            broj = Request.Form["idKartona"].ToString();
+            string vrstaTesta = formCollection["vrstaTesta"].ToString();
+            string namjenaTesta = formCollection["namjena"].ToString();
+            string rezultat = formCollection["rezultat"];
+            broj = formCollection["idKartona"].ToString();
             Test test = new Test();
             int vrsta = 0;
             if (vrstaTesta == "PCR")
@@ -203,15 +203,13 @@ namespace CovidX.Controllers
             if (namjenaTesta == "Hitni")
                 namjena = 0;
             else namjena = 1;
-            test.datumTestiranja = DateTime.Today.AddDays(-2);
+            test.datumTestiranja = DateTime.Parse(datumTestiranja);
             Random ran = new Random();
-            test.idTesta = ran.Next(1356) * 2;
-
+            test.idTesta = Int32.Parse(id);
             int rezult = 0;
-            if (test.idTesta % 2 == 0) rezult = 0;
-            else rezult = 1;
-
-            test.kartonId = "H-1";
+            if (rezultat == "POZITIVAN")
+                rezult = 1;
+            test.kartonId = broj;
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
                 string date = "'" + test.datumTestiranja.Year + "-" + test.datumTestiranja.Month + "-" + test.datumTestiranja.Day + "'";
@@ -302,7 +300,7 @@ namespace CovidX.Controllers
                 using SqlDataReader reader2 = command2.ExecuteReader();
 
             }
-            return View("MedicinskaSestraView") ;
+            return RedirectToAction("MedicinskaSestraView", "MedicinskaSestra");
         }
     }
 

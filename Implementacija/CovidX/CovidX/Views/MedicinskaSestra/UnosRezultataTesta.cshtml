@@ -3,8 +3,7 @@
 }
 <style type="text/css">
     select {
-        // A reset of styles, including removing the default dropdown arrow appearance: none;
-        // Additional resets for further consistency background-color: transparent;
+     
         border: none;
         padding: 0 1em 0 0;
         margin: 0;
@@ -55,8 +54,10 @@
 </head>
 
 <body>
-    <main class="page" style="min-height: 100%;">
-        <section class="clean-block about-us">
+    @using (Html.BeginForm("UnesiTest", "MedicinskaSestra", FormMethod.Post))
+    {
+        <div class="jumbotron" style="margin-right: 25px;width: 947.6px;height: 559px;margin-top: 23px;margin-left: -44px;">
+
             <div class="row register-form">
                 <div class="col-md-8 offset-md-2">
 
@@ -74,8 +75,8 @@
                         <div class="form-row form-group">
                             <div class="col-sm-4 label-column"><label class="col-form-label">Vrsta testa</label></div>
                             <div class="col-sm-6 input-column">
-                                <div class="custom-select" style="margin-left:13px" name="vrsta">
-                                    <select>
+                                <div class="custom-select" style="margin-left:13px">
+                                    <select name="vrsta">
                                         <option value="PCR">PCR</option>
                                         <option value="Serološki">Serološki</option>
                                         <option value="Brzi antigenski">Brzi antigenski</option>
@@ -86,8 +87,8 @@
                         <div class="form-row form-group">
                             <div class="col-sm-4 label-column"><label class="col-form-label" for="repeat-pawssword-input-field">Namjena testa</label></div>
                             <div class="col-sm-6 input-column" style="margin-left: 13px;">
-                                <div class="custom-select" name="namjena">
-                                    <select>
+                                <div class="custom-select">
+                                    <select name="namjena">
                                         <option value="Hitni">Hitni</option>
                                         <option value="Potrebe prelaska granice">Potrebe prelaska granice</option>
                                     </select>
@@ -97,8 +98,8 @@
                         <div class="form-row form-group">
                             <div class="col-sm-4 label-column"><label class="col-form-label" for="dropdown-input-field">Rezultat</label></div>
                             <div class="col-sm-4 input-column">
-                                <div class="custom-select" style="margin-left:13px" name="rezultat">
-                                    <select>
+                                <div class="custom-select" style="margin-left:13px">
+                                    <select name="rezultat">
                                         <option value="Pozitivan">POZITIVAN</option>
                                         <option value="Negativan">NEGATIVAN</option>
                                     </select>
@@ -116,13 +117,12 @@
 
                 </div>
             </div>
-            @using (Html.BeginForm("UnesiTest", "MedicinskaSestra", FormMethod.Post))
-            {
-                @Html.AntiForgeryToken()
-                <button class="btn btn-light submit-button" type="submit">Unesi test</button>
+
+            @Html.AntiForgeryToken()
+            <button class="btn btn-light submit-button" type="submit">Unesi test</button>
+            </div>
             }
-            </section>
-        </main>
+
 
             <script src="/assets/js/jquery-3.6.0.min.js"></script>
             <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
@@ -134,6 +134,6 @@
             <script src="/assets/js/-Countdown-BS4-.js"></script>
             <script src="/assets/js/Profile-Edit-Form.js"></script>
             <script id="bs-live-reload" data-sseport="51103" data-lastchange="1622650077838" src="/js/livereload.js"></script>
-</body>
+    </body>
 
 </html>

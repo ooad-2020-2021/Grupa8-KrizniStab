@@ -19,7 +19,9 @@ namespace CovidX.Controllers
         {
             _configuration = configuration;
         }
-  
+
+       
+
         public IActionResult MapaView()
         {
             return View();
@@ -45,48 +47,29 @@ namespace CovidX.Controllers
             ViewBag.mail = pacijent.mail;
             ViewBag.telefon = pacijent.telefon;
 
-          /*  bool odredi = false;
-            string datumTestiranja = "";
-            string rezultat = "";
-            DateTime date = new DateTime();
+                 DateTime datumTestiranja = new DateTime();
+            int rezultat = 0;
             //coundown izolacija
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
-                var sql = "SELECT datumTestiranja, rezultat FROM Test WHERE brojKartona = '" + User.Identity.Name + "-1'";
+                var sql = "SELECT datumTestiranja, rezultat FROM Test WHERE brojKartona = '" + User.Identity.Name.Substring(0,1) + "-1'";
                 connection.Open();
                 using SqlCommand command = new SqlCommand(sql, connection);
                 using SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    rezultat = reader["rezultat"].ToString();
-                    datumTestiranja = reader["datumTestiranja"].ToString();
-                    string godina = datumTestiranja.Substring(0, 4);
-                    string mjesec = datumTestiranja.Substring(5, 2);
-                    string dan = datumTestiranja.Substring(8, 2);
-                    if (dan[0] == '0') dan = dan[1].ToString();
+                    rezultat = Int32.Parse(reader["rezultat"].ToString());
+                    datumTestiranja = DateTime.Parse(reader["datumTestiranja"].ToString());
 
-                     date = new DateTime(Int32.Parse(godina), Int32.Parse(mjesec), Int32.Parse(dan));
-                    if(odredi != true) {
-                        if (rezultat == "1")
-                        {
-                            if (date.AddDays(14) > DateTime.Today)
-                            {
-                                date.AddDays(-14);
-                                odredi = true;
-                                break;
-                            }
-                        }
-                    }
+
                 }
             }
             DateTime krajizolacije = new DateTime();
-            if(odredi)
-            {
-                Test test = new Test();
-                krajizolacije = test.odrediKrajIzolacije(date);
-            }*/
-            double kraj = (DateTime.Today.AddDays(14) - DateTime.Today).TotalDays;
+            Test test = new Test();
+            krajizolacije = test.odrediKrajIzolacije(datumTestiranja);
+            double kraj = (krajizolacije - DateTime.Today).TotalDays;
             ViewBag.dana = kraj;
+            
             return View();
         }
         private Pacijent GetPacijent()
@@ -120,7 +103,8 @@ namespace CovidX.Controllers
             string namjenaTesta = formCollection["namjena"].ToString();
             string lokacija = formCollection["lokacija"].ToString();
             string placanje = formCollection["nacin"].ToString();
-            string datum = formCollection["datum"].ToString();
+         
+            DateTime datum = DateTime.Parse(formCollection["datum"].ToString());
             string vrijeme = formCollection["vrijeme"].ToString();
 
             RezervacijaTestiranja rezervacija = new RezervacijaTestiranja();
@@ -143,7 +127,8 @@ namespace CovidX.Controllers
             else if (lokacija == "Ilidža")
                 lok = 1;
             else lok = 2;
-            test.datumTestiranja = DateTime.Today.AddDays(1);
+
+            test.datumTestiranja = datum;
             pacijent = GetPacijent();
             test.kartonId = pacijent.brojKartona;
 
@@ -152,9 +137,7 @@ namespace CovidX.Controllers
             test.idTesta = testId;
             rezervacija.testId = test.idTesta;
             int rezult = 0;
-            if (testId % 2 == 0) rezult = 0;
-            else rezult = 1;
-
+          
            
             int pay = 0;
             if (placanje == "Internet")
@@ -184,34 +167,9 @@ namespace CovidX.Controllers
                 using SqlDataReader reader2 = command2.ExecuteReader();
                 
             }
-            return View();
+            if (placanje == "Internet") return View("OnlinePlacanjeView");
+            else return View("MapaView");
         }
-        [HttpPost]
-        public IActionResult Plati(IFormCollection formCollection)
-        {
-           string brojKartice = "01733566";
-            Random random = new Random();
-            int placanjeId = random.Next(2000) * 2;
-            DateTime datumUplate = DateTime.Today;
-            DateTime datumIsteka = DateTime.Today.AddDays(2358);
-            KarticnoPlacanje karticno = new KarticnoPlacanje(placanjeId, datumUplate, 45, brojKartice, datumIsteka);
-
-            using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
-            {
-                string dateUplate = "'" + karticno.datumUplate.Year + "-" + karticno.datumUplate.Month + "-" + karticno.datumUplate.Day + "'";
-                string dateIsteka = "'" + karticno.datumIsteka.Year + "-" + karticno.datumIsteka.Month + "-" + karticno.datumIsteka.Day + "'";
-                var sql = "SET IDENTITY_INSERT  [dbo].[Karticno placanje] ON " +
-                       "INSERT INTO [dbo].[Karticno placanje](placanjeId, datumUplate, iznosUplate, brojKartice, datumIsteka) VALUES(" +
-                    karticno.placanjeId + "," + dateUplate + "," + karticno.iznosUplate + "," + brojKartice + ","
-                    + dateIsteka + ")";
-                connection.Open();
-                using SqlCommand command = new SqlCommand(sql, connection);
-                using SqlDataReader reader = command.ExecuteReader();
-
-            }
-            return View();
-        }
-        
 
     }
 }   

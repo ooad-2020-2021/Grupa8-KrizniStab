@@ -20,31 +20,31 @@ namespace CovidX.Controllers
             _configuration = configuration;
         }
         [HttpPost]
-        public IActionResult Plati()
+        public IActionResult Plati(IFormCollection formCollection)
         {
-          //  string brojKartice = Request.Form["brojKartice"];
+            string brojKartice = formCollection["brojKartice"];
             Random random = new Random();
             int placanjeId = random.Next(2000) *2;
             DateTime datumUplate = DateTime.Today;
-            DateTime datumIsteka = DateTime.Today.AddDays(2358);
-            KarticnoPlacanje karticno = new KarticnoPlacanje(placanjeId, datumUplate, 45, "5465454", datumIsteka);
+            string datumIsteka = formCollection["datumIsteka"];
+            int mjesec = Int32.Parse(datumIsteka.Substring(0, 2));
+            int godina = Int32.Parse("20" + datumIsteka.Substring(3, 2));
+            DateTime istek = new DateTime(godina, mjesec, 1);
+            KarticnoPlacanje karticno = new KarticnoPlacanje(placanjeId, datumUplate, 45, brojKartice, istek);
            
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
-
-                var sql = "INSERT INTO [dbo].[Karticno placanje] VALUES(" +
-                    karticno.placanjeId + "," + karticno.datumUplate + "," + karticno.iznosUplate + "," + karticno.brojKartice + ","
-                    + karticno.datumIsteka + ")";
+                var datumU = "'" + karticno.datumUplate.Year + "-" + karticno.datumUplate.Month + "-" + karticno.datumUplate.Day + "'";
+                var datumI = "'" + karticno.datumIsteka.Year + "-" + karticno.datumIsteka.Month + "-" + karticno.datumIsteka.Day + "'";
+                var sql ="SET IDENTITY_INSERT[dbo].[Karticno placanje] ON INSERT INTO [dbo].[Karticno placanje](placanjeId, datumUplate, iznosUplate, brojKartice, datumIsteka) VALUES(" +
+                    karticno.placanjeId + "," + datumU + "," + karticno.iznosUplate + "," + karticno.brojKartice + ","
+                    + datumI + ")";
                 connection.Open();
                 using SqlCommand command = new SqlCommand(sql, connection);
                 using SqlDataReader reader = command.ExecuteReader();
 
             }
-            return View("MapaView");
-        }
-        public IActionResult MapaView()
-        {
-            return View();
+            return RedirectToAction("MapaView", "Pacijent");
         }
     }
 

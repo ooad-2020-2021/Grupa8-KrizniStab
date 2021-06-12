@@ -103,9 +103,11 @@ namespace CovidX.Controllers
             MedicinskaSestra med = new MedicinskaSestra(ime, prezime, jmbg, DateTime.Today, telefon, mail, spol, brojKartona, DateTime.Today.AddDays(-10), lokacija, 1);
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
+                string dateRodjenja = med.datumRodjenja.Year + "-" + med.datumRodjenja.Month + "-" + med.datumRodjenja.Day ;
+                string dateZadnjegTestiranja = med.datumRodjenja.Year + "-" + med.datumRodjenja.Month + "-" + med.datumRodjenja.Day;
                 var sql = "INSERT INTO [dbo].[Medicinska sestra] (jmbg,ime,prezime,datumRodjenja,telefon,mail,spol,brojKartona,datumZadnjegTestiranja,lokacija,adminId) Values('"
-                + med.jmbg + "','" + med.ime + "','" + med.prezime + "','" + med.datumRodjenja + "','" + med.telefon + "','" + med.mail + "','" + "0" + "','" + med.brojKartona
-                + "','" + med.datumZadnjegTestiranja + "','" + "0" + "','" + med.adminId + "')";
+                + med.jmbg + "','" + med.ime + "','" + med.prezime + "','" +dateRodjenja + "','" + med.telefon + "','" + med.mail + "','" + "0" + "','" + med.brojKartona
+                + "','" + dateZadnjegTestiranja + "','" + "0" + "','" + med.adminId + "')";
                 connection.Open();
                 using SqlCommand command = new SqlCommand(sql, connection);
                 using SqlDataReader reader = command.ExecuteReader();

@@ -8972,19 +8972,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Selma\\.nuget\\packages\\": {}
+    "C:\\Users\\XY\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Selma\\Documents\\GitHub\\Grupa8-KrizniStab\\Implementacija\\CovidX\\CovidX\\CovidX.csproj",
+      "projectUniqueName": "C:\\Users\\XY\\Desktop\\Grupa8-KrizniStab\\Implementacija\\CovidX\\CovidX\\CovidX.csproj",
       "projectName": "CovidX",
-      "projectPath": "C:\\Users\\Selma\\Documents\\GitHub\\Grupa8-KrizniStab\\Implementacija\\CovidX\\CovidX\\CovidX.csproj",
-      "packagesPath": "C:\\Users\\Selma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Selma\\Documents\\GitHub\\Grupa8-KrizniStab\\Implementacija\\CovidX\\CovidX\\obj\\",
+      "projectPath": "C:\\Users\\XY\\Desktop\\Grupa8-KrizniStab\\Implementacija\\CovidX\\CovidX\\CovidX.csproj",
+      "packagesPath": "C:\\Users\\XY\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\XY\\Desktop\\Grupa8-KrizniStab\\Implementacija\\CovidX\\CovidX\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Selma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\XY\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

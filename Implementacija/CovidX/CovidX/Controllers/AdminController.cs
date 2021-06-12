@@ -13,7 +13,6 @@ namespace CovidX.Controllers
     {
         private readonly IConfiguration _configuration;
         Admin admin = new Admin();
-
         List<MedicinskaSestra> medicinskoOsoblje = new List<MedicinskaSestra>();
         List<RezervacijaTestiranja> listaTermina = new List<RezervacijaTestiranja>();
         public AdminController(IConfiguration configuration)
@@ -65,59 +64,6 @@ namespace CovidX.Controllers
             return View(medicinskoOsoblje);
         }
 
-        [HttpPost]
-        public IActionResult UnesiMedOsoblje(IFormCollection formCollection)
-        {
-
-            string ime = Request.Form["ime"];
-            string prezime = Request.Form["prezime"];
-            string jmbg = Request.Form["jmbg"];
-            string mail = Request.Form["mail"];
-            string lokacija1 = Request.Form["lokacija"];
-            string UserName = Request.Form["UserName"];
-            string password = Request.Form["Password"];
-            string datumRodjenja = Request.Form["datumRodjenja"];
-            string spol1 = Request.Form["spol"];
-            string brojKartona = Request.Form["brojKartona"];
-            string telefon = Request.Form["telefon"];
-            Spol spol = new Spol();
-
-            if (spol1 == "Muski")
-            {
-                spol = Spol.MUSKI;
-            }
-            else if (spol1 == "Zenski")
-            {
-                spol = Spol.ZENSKI;
-            }
-            Lokacija lokacija = new Lokacija();
-            if (lokacija1 == "Novo Sarajevo")
-            {
-                lokacija = Lokacija.NovoSarajevo;
-            }
-
-            else if (lokacija1 == "Ilidža") { lokacija = Lokacija.Ilidža; }
-
-            else if (lokacija1 == "Stari Grad") { lokacija = Lokacija.StariGrad; }
-         
-            MedicinskaSestra med = new MedicinskaSestra(ime, prezime, jmbg, DateTime.Today, telefon, mail, spol, brojKartona, DateTime.Today.AddDays(-10), lokacija, 1);
-                       using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
-                        {                        
-                            var sql = "INSERT INTO [dbo].[Medicinska sestra](jmbg,ime,prezime,datumRodjenja,telefon,mail,spol,brojKartona,datumZadnjegTestiranja,lokacija,adminId) Values("
-                            + med.jmbg + "," + med.ime + "," + med.prezime + "," + med.datumRodjenja + "," + med.telefon + "," + med.mail + "," + med.spol + "," + med.brojKartona
-                            + "," + med.datumZadnjegTestiranja + "," + med.lokacija + "," + med.adminId +")";
-                            connection.Open();
-                            using SqlCommand command = new SqlCommand(sql, connection);
-                            using SqlDataReader reader = command.ExecuteReader();
-                            while (reader.Read())
-                            {
-                                Console.WriteLine(reader);
-                            }
-
-                        }
-            medicinskoOsoblje.Add(med);
-            return View();
-        }
 
         // GET: AdminController
         public ActionResult Index()

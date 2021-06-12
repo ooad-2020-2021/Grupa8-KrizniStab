@@ -49,7 +49,7 @@ namespace CovidX.Controllers
                     medSestra.mail = reader["mail"].ToString();
                     medSestra.telefon = reader["telefon"].ToString();
                     medSestra.datumZadnjegTestiranja = (DateTime)reader["datumZadnjegTestiranja"];
-                    medSestra.UserName = (string)reader["UserName"];
+                    medSestra.UserName = reader["ime"].ToString();
 
                     if (reader["statusOsoblja"].ToString().Equals("1"))
                     {
@@ -108,17 +108,18 @@ namespace CovidX.Controllers
                 var sql = "INSERT INTO [dbo].[Medicinska sestra] (jmbg,ime,prezime,datumRodjenja,telefon,mail,spol,brojKartona,datumZadnjegTestiranja,lokacija,adminId) Values('"
                 + med.jmbg + "','" + med.ime + "','" + med.prezime + "','" +dateRodjenja + "','" + med.telefon + "','" + med.mail + "','" + "0" + "','" + med.brojKartona
                 + "','" + dateZadnjegTestiranja + "','" + "0" + "','" + med.adminId + "')";
+                var karton = "INSERT INTO [dbo].[Karton osoblja](brojKartona, kriticnaGrupa, statusOsoblja) VALUES('" + med.brojKartona + "'," + 0 + "," + 0 + ")";
                 connection.Open();
                 using SqlCommand command = new SqlCommand(sql, connection);
                 using SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    Console.WriteLine(reader);
-                }
-
+                connection.Close();
+                connection.Open();
+                using SqlCommand command2 = new SqlCommand(karton, connection);
+                using SqlDataReader reader2 = command2.ExecuteReader();
+             
             }
             medicinskoOsoblje.Add(med);
-            return View();
+            return RedirectToAction("AdminView", "Admin");
         }
 
         // GET: AdminController

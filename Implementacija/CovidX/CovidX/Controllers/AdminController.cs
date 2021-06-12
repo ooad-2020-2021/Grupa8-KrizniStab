@@ -13,7 +13,7 @@ namespace CovidX.Controllers
     {
         private readonly IConfiguration _configuration;
         Admin admin = new Admin();
-
+        List<PrikazTermina> termini = new List<PrikazTermina>();
         List<MedicinskaSestra> medicinskoOsoblje = new List<MedicinskaSestra>();
         List<RezervacijaTestiranja> listaTermina = new List<RezervacijaTestiranja>();
         public AdminController(IConfiguration configuration)
@@ -24,10 +24,7 @@ namespace CovidX.Controllers
         {
             return View();
         }
-        public IActionResult Termini()
-        {
-            return View();
-        }
+      
         public IActionResult AdminView()
         {
 
@@ -63,6 +60,42 @@ namespace CovidX.Controllers
                 }
             }
             return View(medicinskoOsoblje);
+        }
+        public IActionResult Termini()
+        {
+
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+            {
+                var sql = "SELECT distinct ime, prezime,mail,telefon,vrstaTesta FROM[dbo].[Pacijent],[dbo].[Test] WHERE[dbo].[Pacijent].brojKartona = [dbo].[Test].brojKartona";
+                connection.Open();
+                using SqlCommand command = new SqlCommand(sql, connection);
+                using SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    PrikazTermina prikaz = new PrikazTermina();
+                    prikaz.Ime = reader["ime"].ToString();
+                    prikaz.Prezime = reader["prezime"].ToString();             
+                    prikaz.Email = reader["mail"].ToString();
+                    prikaz.Broj = reader["telefon"].ToString();
+
+                    string vrsta = reader["vrstaTesta"].ToString();
+                    if (vrsta == "PCR")
+                    {
+                        prikaz.Vrsta = VrstaTesta.PCR;
+                    }
+                    if (vrsta == "Brzi antigenski")
+                    {
+                        prikaz.Vrsta = VrstaTesta.BRZI_ANTIGENSKI                            ;
+                    }
+                    if (vrsta == "Serološki")
+                    {
+                        prikaz.Vrsta = VrstaTesta.SEROLOSKI;
+                    }
+                    prikaz.Potvrdjen = Potvrdjen.NE;
+                    termini.Add(prikaz);
+                }
+            }
+            return View(termini);
         }
 
         [HttpPost]

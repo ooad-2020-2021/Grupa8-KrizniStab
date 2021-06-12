@@ -17,7 +17,7 @@
                         <div class="collapse navbar-collapse" id="navcol-1" align="right">
                             <ul class="navbar-nav" style="font-weight:bold">
                                 <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="UnosMedicinskogOsoblja">Unesi</a></li>
-                                <li class="nav-item"><a class="nav-link" asp-controller="AdminController" asp-action="Termini">Prikazi termine</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="Termini">Prikazi termine</a></li>
                                 <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="AdminView">Pocetna</a></li>
                             </ul>
                         </div>
@@ -25,34 +25,64 @@
                 </nav>
             </div>
         </div>
+        <div style="margin-bottom:10px">
 
-
-        <table style="width:100%">
-            <tr>
-
-                <th>Ime</th>
-                <th>Prezime</th>
-                <th>Vrsta testa</th>
-                <th>Broj</th>
-                <th>Email</th>
-                <th>Potvrđen</th>
-            </tr>
-
-            @foreach (var medSestra in Model)
-
-            {
+        </div >
+      
+            <table style="width:100%">
                 <tr>
-                    <td>@medSestra.ime</td>
-                    <td>@medSestra.prezime</td>
-                    <td>Serološki</td>
-                    <td>@medSestra.mail</td>
-                    <td>@medSestra.Status</td>
-                    <td>@medSestra.datumZadnjegTestiranja</td>
+                    <th>
+                        <div class="custom-select" style="width:180px">
+                            <select name="lokacija">
+                                <option value="Ilidža">Ilidža</option>
+                                <option value="Novo Sarajevo">Novo Sarajevo</option>
+                                <option value="Stari Grad">Stari Grad</option>
+                            </select>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="input-column"><input class="form-control" name="Datum" type="date" style="width:180px" ></div>
+                    </th>
+                    <th>
+                        <div class="custom-select" style="width:180px">
+                            <select name="vrijeme">
+                                <option value="Termin 09:00h">Termin 09:00h</option>
+                                <option value="Termin 10:00h">Termin 10:00h</option>
+                                <option value="Termin 11:00h">Termin 11:00h</option>
+                                <option value="Termin 12:00h">Termin 12:00h</option>
+                                <option value="Termin 13:00h">Termin 13:00h</option>
+                                <option value="Termin 14:00h">Termin 14:00h</option>
+                                <option value="Termin 15:00h">Termin 15:00h</option>
+                                <option value="Termin 16:00h">Termin 16:00h</option>
+                                <option value="Termin 17:00h">Termin 17:00h</option>
+                               
+                            </select>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+
+                    <th>Ime</th>
+                    <th>Prezime</th>
+                    <th>Vrsta testa</th>
+                    <th>Broj</th>
+                    <th>Email</th>
+                    <th>Potvrđen</th>
                 </tr>
 
+                @foreach (var prikaz in Model)
 
-            }
-        </table>
+                {
+                    <tr>
+                        <td>@prikaz.Ime</td>
+                        <td>@prikaz.Prezime</td>
+                        <td>@prikaz.Vrsta</td>
+                        <td>@prikaz.Broj</td>
+                        <td>@prikaz.Email</td>
+                        <td>@prikaz.Potvrdjen</td>
+                    </tr>
+                }
+            </table>
 
     </section>
 </main>

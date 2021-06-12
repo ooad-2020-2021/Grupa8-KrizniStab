@@ -46,7 +46,7 @@ namespace CovidX.Controllers
                     medSestra.mail = reader["mail"].ToString();
                     medSestra.telefon = reader["telefon"].ToString();
                     medSestra.datumZadnjegTestiranja = (DateTime)reader["datumZadnjegTestiranja"];
-                    medSestra.UserName = (string)reader["UserName"];
+                    medSestra.UserName = (string)reader["ime"];
 
                     if (reader["statusOsoblja"].ToString().Equals("1"))
                     {

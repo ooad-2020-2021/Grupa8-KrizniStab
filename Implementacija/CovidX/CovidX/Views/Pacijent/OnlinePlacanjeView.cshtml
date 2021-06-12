@@ -37,36 +37,33 @@
 </head>
 
 <body>
-    <main class="page" style="min-height: 100%;">
-        <section class="clean-block about-us">
-            @using (Html.BeginForm("Plati", "Placanje", FormMethod.Post))
-            {
-                <form style="width: 350px;height: 350px;margin-left: 74px;margin-top: 10px;">
-                    <p style="color: rgb(0,0,0);text-align: center;margin-top: 43px;margin-left: 13px;">Ostvarujete popust od 20% za online plaćanje.</p><img class="img-fluid panel-title-image" src="~/assets/img/accepted_cards.png" style="margin-left: 105px;margin-bottom: -14px;margin-top: -22px;">
-                    <div class="form-row" style="margin-top: 39px;">
-                        <div class="col"><input class="form-control" name="brojKartice" type="text" placeholder="Broj kartice"></div>
-                    </div>
-                    <p style="margin-top: 24px;padding-left: 5px;">Datum uplate:</p><input class="form-control" type="date" style="margin-top: -13px;">
-                    <p style="margin-top: 24px;margin-left: 6px;">Datum isteka:</p><input class="form-control" type="tel" id="cardExpiry-1" name="datumIsteka" required="" placeholder="MM / YY" style="padding-top: 8px;margin-top: -17px;">
-                
+    <div class="jumbotron" style="margin-right: 25px;width: 600.6px;height: 700px; background-color:whitesmoke">
 
-                @Html.AntiForgeryToken()
-                <button class="btn btn-primary" type="submit" style="margin-left: 158px;margin-top: 19px;width: 78.1px;">Plati</button>
-                    </form>
-            }
+        @using (Html.BeginForm("Plati", "Placanje", FormMethod.Post))
+        {
+                <p style="color: rgb(0,0,0);text-align: center;margin-top: 43px;margin-left: 13px;font-weight:bold; font-size:20px">Ostvarujete popust od 20% za online plaćanje.</p><img class="img-fluid panel-title-image" style="margin-top:10px; margin-left: 70px" src="~/assets/img/accepted_cards.png" style="margin-left: 105px;margin-bottom: -14px;margin-top: -22px;">
+                <div class="form-row" style="margin-top: 39px;">
+                    <div class="col"><input class="form-control" name="brojKartice" type="text" placeholder="Broj kartice"></div>
+                </div>
+                <p style="margin-top: 24px;padding-left: 5px;">Datum uplate:</p><input class="form-control" type="date" style="margin-top: -13px;">
+                <p style="margin-top: 24px;margin-left: 6px;">Datum isteka:</p><input class="form-control" type="tel" id="cardExpiry-1" name="datumIsteka" required="" placeholder="MM / YY" style="padding-top: 8px;margin-top: -17px;">
 
-        </section>
-        </main>
-            <script src="/assets/js/jquery-3.6.0.min.js"></script>
-            <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
-            <script src="/js/chart.min.js"></script>
-            <script src="/assets/js/bs-init.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-            <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar.js"></script>
-            <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar-1.js"></script>
-            <script src="/assets/js/-Countdown-BS4-.js"></script>
-            <script src="/assets/js/Profile-Edit-Form.js"></script>
-            <script id="bs-live-reload" data-sseport="64830" data-lastchange="1622803832805" src="/js/livereload.js"></script>
+            
+
+            <button class="btn btn-success btn-lg d-block" style="position:center; margin-top:50px; margin-left:200px;" type="submit">Plati</button>
+        }
+    </div>
+
+        <script src="/assets/js/jquery-3.6.0.min.js"></script>
+        <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/js/chart.min.js"></script>
+        <script src="/assets/js/bs-init.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar.js"></script>
+        <script src="/assets/js/Off-Canvas-Sidebar-Drawer-Navbar-1.js"></script>
+        <script src="/assets/js/-Countdown-BS4-.js"></script>
+        <script src="/assets/js/Profile-Edit-Form.js"></script>
+        <script id="bs-live-reload" data-sseport="64830" data-lastchange="1622803832805" src="/js/livereload.js"></script>
 </body>
 
 </html>

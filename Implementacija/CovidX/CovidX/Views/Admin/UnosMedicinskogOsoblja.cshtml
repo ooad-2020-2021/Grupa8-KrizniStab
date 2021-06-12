@@ -3,33 +3,33 @@
     ViewData["Title"] = "UnosMedicinskogOsoblja";
 }
 
-<h4>Medicinsko Osoblje</h4>
+<h4>Unos osoblja</h4>
 <hr />
 
 <body>
     @using (Html.BeginForm("UnesiMedOsoblje", "Admin", FormMethod.Post))
     {
-    <div class="jumbotron" style="margin-right: 25px;width: 947.6px;height: 100%;margin-top: 23px;margin-left: -44px;">
+    <div class="jumbotron" style="margin-right: 25px;width: 607.6px;height: 700px;margin-top: 23px;margin-left: -44px; background-color:snow">
 
         <div class="form-row form-group">
-            <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Ime</label></div>
+            <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field" style="font-weight:bold">Ime</label></div>
             <div class="col-sm-6 input-column"><input class="form-control" type="text" name="ime" style="width: 286px;margin-left: 13px;"></div>
         </div>
         <div class="form-row form-group">
-            <div class="col-sm-4 label-column"><label class="col-form-label" for="Surname-input-field">Prezime</label></div>
+            <div class="col-sm-4 label-column"><label class="col-form-label" for="Surname-input-field"style="font-weight:bold">Prezime</label></div>
             <div class="col-sm-6 input-column"><input class="form-control" type="text" name="prezime" style="width: 286px;margin-left: 13px;"></div>
         </div>
         <div class="form-row form-group">
-            <div class="col-sm-4 label-column"><label class="col-form-label" for="jmbg-input-field">JMBG</label></div>
+            <div class="col-sm-4 label-column"><label class="col-form-label" for="jmbg-input-field" style="font-weight:bold">JMBG</label></div>
             <div class="col-sm-6 input-column"><input class="form-control" type="text" name="jmbg" style="width: 286px;margin-left: 13px;"></div>
         </div>
         <div class="form-row form-group">
-            <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Email</label></div>
+            <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field" style="font-weight:bold">Email</label></div>
             <div class="col-sm-6 input-column"><input class="form-control" name="mail" type="email" style="width: 286.1px;margin-left: 13px;"></div>
         </div>
 
         <div class="form-row form-group">
-            <div class="col-sm-4 label-column"><label class="col-form-label">Lokacija</label></div>
+            <div class="col-sm-4 label-column"><label class="col-form-label" style="font-weight:bold">Lokacija</label></div>
             <div class="col-sm-6 input-column" style="width: 286.1px;margin-left: 13px;">
                 <div class="custom-select" style="width: 286.1px;" name="lokacija">
                     <select name="lokacija">
@@ -41,28 +41,28 @@
             </div>
         </div>
         <div class="form-row form-group">
-            <div class="col-sm-4 label-column"><label class="col-form-label" for="date-input-field">Datum rođenja</label></div>
+            <div class="col-sm-4 label-column"><label class="col-form-label" for="date-input-field" style="font-weight:bold">Datum rođenja</label></div>
             <div class="col-sm-6 input-column"><input class="form-control" name="datumRodjenja" type="date" style="width: 286.1px;margin-left: 13px;"></div>
         </div>
         <div class="form-row form-group">
-            <div class="col-sm-4 label-column"><label class="col-form-label" for="telefon-input-field">Broj telefona</label></div>
+            <div class="col-sm-4 label-column"><label class="col-form-label" for="telefon-input-field" style="font-weight:bold">Broj telefona</label></div>
             <div class="col-sm-6 input-column"><input class="form-control" name="telefon" type="text" style="width: 286.1px;margin-left: 13px;"></div>
         </div>
         <div class="form-row form-group">
-            <div class="col-sm-4 label-column"><label class="col-form-label" for="spol-input-field">Spol</label></div>
+            <div class="col-sm-4 label-column"><label class="col-form-label" for="spol-input-field"style="font-weight:bold">Spol</label></div>
             <div class="col-sm-6 input-column"><input class="form-control" name="spol" type="text" style="width: 286.1px;margin-left: 13px;"></div>
         </div>
         <div class="form-row form-group">
-            <div class="col-sm-4 label-column"><label class="col-form-label" for="brojKartona-input-field">Broj kartona</label></div>
+            <div class="col-sm-4 label-column"><label class="col-form-label" for="brojKartona-input-field" style="font-weight:bold">Broj kartona</label></div>
             <div class="col-sm-6 input-column"><input class="form-control" name="brojKartona" type="text" style="width: 286.1px;margin-left: 13px;"></div>
         </div>
         <div class="form-row form-group">
-            <div class="col-sm-4 label-column"><label class="col-form-label" for="password-input-field">Password</label></div>
+            <div class="col-sm-4 label-column"><label class="col-form-label" for="password-input-field"style="font-weight:bold">Password</label></div>
             <div class="col-sm-6 input-column"><input class="form-control" name="password" type="password" style="width: 286.1px;margin-left: 13px;"></div>
         </div>
 
         @Html.AntiForgeryToken()
-        <button class="btn btn-light submit-button" type="submit">Kreiraj</button>
+        <button class="btn btn-primary" type="submit" style="margin-left:250px; margin-top: 20px">Unesi</button>
     </div>
             }
             <script src="/assets/js/jquery-3.6.0.min.js"></script>

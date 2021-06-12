@@ -43,6 +43,7 @@ namespace CovidX.Controllers
             }
             return RedirectToAction("MapaView", "Pacijent");
         }
+      
     }
 
 }

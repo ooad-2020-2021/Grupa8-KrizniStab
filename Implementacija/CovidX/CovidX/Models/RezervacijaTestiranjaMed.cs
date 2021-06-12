@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace CovidX.Models
-{ 
+{
     public class RezervacijaTestiranjaMed
     {
         public RezervacijaTestiranjaMed()

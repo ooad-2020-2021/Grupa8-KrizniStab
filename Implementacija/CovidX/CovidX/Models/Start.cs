@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace CovidX.Models
 {
@@ -13,6 +9,6 @@ namespace CovidX.Models
         public int id { get; set; }
 
         Start() { }
-        Start(int id) { this.id = id;  }
+        Start(int id) { this.id = id; }
     }
 }

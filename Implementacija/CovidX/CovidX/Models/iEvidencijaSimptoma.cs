@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace CovidX.Models
+﻿namespace CovidX.Models
 {
     interface IEvidencijaSimptoma
     {
-        
+
         public bool otezanoDisanjeIliNedostatakDaha { get; set; } //10
         public bool bolUGrudima { get; set; } //5
         public bool gubitakGovoraIliPokreta { get; set; } //2
@@ -17,7 +12,8 @@ namespace CovidX.Models
         public bool glavobolja { get; set; } //5
         public bool gubitakOkusaIliMirisa { get; set; } //30
         public bool osipNaKozi { get; set; } //3
-        public static bool  evidentirajSimptome(bool s1, bool s2, bool s3, bool s4, bool s5, bool s6, bool s7, bool s8, bool s9) {
+        public static bool evidentirajSimptome(bool s1, bool s2, bool s3, bool s4, bool s5, bool s6, bool s7, bool s8, bool s9)
+        {
             var broj = 0;
             if (s1 == true) broj += 10;
             if (s2 == true) broj += 5;

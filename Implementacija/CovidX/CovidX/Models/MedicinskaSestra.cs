@@ -46,9 +46,7 @@ namespace CovidX.Models
             get; set;
         }
         public StatusOsoblja Status { get => status; set => status = value; }
-        public string UserName { get => userName; set => userName = value; }
-
-        [PasswordPropertyText]
+        public string UserName1 { get => userName; set => userName = value; }
         public string Password { get => password; set => password = value; }
     }
 }

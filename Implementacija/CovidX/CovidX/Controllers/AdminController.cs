@@ -78,6 +78,7 @@ namespace CovidX.Controllers
             string password = Request.Form["Password"];
             string datumRodjenja = Request.Form["datumRodjenja"];
             string spol1 = Request.Form["spol"];
+            string brojKartona = Request.Form["brojKartona"];
             string telefon = Request.Form["telefon"];
             Spol spol = new Spol();
 
@@ -98,43 +99,23 @@ namespace CovidX.Controllers
             else if (lokacija1 == "Ilidža") { lokacija = Lokacija.Ilidža; }
 
             else if (lokacija1 == "Stari Grad") { lokacija = Lokacija.StariGrad; }
+         
+            MedicinskaSestra med = new MedicinskaSestra(ime, prezime, jmbg, DateTime.Today, telefon, mail, spol, brojKartona, DateTime.Today.AddDays(-10), lokacija, 1);
+                       using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+                        {                        
+                            var sql = "INSERT INTO [dbo].[Medicinska sestra](jmbg,ime,prezime,datumRodjenja,telefon,mail,spol,brojKartona,datumZadnjegTestiranja,lokacija,adminId) Values("
+                            + med.jmbg + "," + med.ime + "," + med.prezime + "," + med.datumRodjenja + "," + med.telefon + "," + med.mail + "," + med.spol + "," + med.brojKartona
+                            + "," + med.datumZadnjegTestiranja + "," + med.lokacija + "," + med.adminId +")";
+                            connection.Open();
+                            using SqlCommand command = new SqlCommand(sql, connection);
+                            using SqlDataReader reader = command.ExecuteReader();
+                            while (reader.Read())
+                            {
+                                Console.WriteLine(reader);
+                            }
 
-            MedicinskaSestra med = new MedicinskaSestra(ime, prezime, jmbg,)
-            Test test = new Test();
-            int vrsta = 0;
-            if (vrstaTesta == "PCR")
-                vrsta = 0;
-            else if (vrstaTesta == "Serološki")
-                vrsta = 1;
-            else vrsta = 2;
-
-            int namjena = 0;
-            if (namjenaTesta == "Hitni")
-                namjena = 0;
-            else namjena = 1;
-            test.datumTestiranja = DateTime.Today.AddDays(-2);
-            Random ran = new Random();
-            test.idTesta = ran.Next(1356) * 2;
-
-            int rezult = 0;
-            if (test.idTesta % 2 == 0) rezult = 0;
-            else rezult = 1;
-
-            test.kartonId = "H-1";
-            using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
-            {
-                string date = "'" + test.datumTestiranja.Year + "-" + test.datumTestiranja.Month + "-" + test.datumTestiranja.Day + "'";
-                var sql = "INSERT INTO  Test Values(" + test.idTesta + "," + date + "," + vrsta + "," +
-                      namjena + "," + rezult + "," + "'" + test.kartonId + "')";
-                connection.Open();
-                using SqlCommand command = new SqlCommand(sql, connection);
-                using SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    Console.WriteLine(reader);
-                }
-
-            }
+                        }
+            medicinskoOsoblje.Add(med);
             return View();
         }
 

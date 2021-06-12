@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using CovidX.Models;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace CovidX.Areas.Identity.Pages.Account
 {
@@ -80,12 +76,12 @@ namespace CovidX.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByEmailAsync(Input.Email);
-               
+
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(user.UserName, Input.Password, Input.RememberMe, lockoutOnFailure: false);
-             
-                
+
+
                 if (result.Succeeded)
                 {
                     if (await _userManager.IsInRoleAsync(user, "Pacijent"))
@@ -96,7 +92,7 @@ namespace CovidX.Areas.Identity.Pages.Account
                     {
                         return RedirectToAction("MedicinskaSestraView", "MedicinskaSestra");
                     }
-                    else if(await _userManager.IsInRoleAsync(user, "Admin"))
+                    else if (await _userManager.IsInRoleAsync(user, "Admin"))
                     {
                         return RedirectToAction("AdminView", "Admin");
                     }

@@ -2,18 +2,14 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CovidX.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-      
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -49,7 +45,7 @@ namespace CovidX.Controllers
         {
             return View();
         }
-   
+
         public IActionResult Login()
         {
             return View();
@@ -59,14 +55,14 @@ namespace CovidX.Controllers
         {
             bool c1 = false;
             bool c2 = false;
-            bool c3 = false; 
+            bool c3 = false;
             bool c4 = false;
             bool c5 = false;
             bool c6 = false;
             bool c7 = false;
             bool c8 = false;
             bool c9 = false;
-           
+
             if (!string.IsNullOrEmpty(formCollection["c1"])) { c1 = true; }
             if (!string.IsNullOrEmpty(formCollection["c2"])) { c2 = true; }
             if (!string.IsNullOrEmpty(formCollection["c3"])) { c3 = true; }
@@ -77,8 +73,8 @@ namespace CovidX.Controllers
             if (!string.IsNullOrEmpty(formCollection["c8"])) { c8 = true; }
             if (!string.IsNullOrEmpty(formCollection["c9"])) { c9 = true; }
 
-            
-           
+
+
             bool evidencija = IEvidencijaSimptoma.evidentirajSimptome(c1, c2, c3, c4, c5, c6, c7, c8, c9);
 
             if (evidencija == true)

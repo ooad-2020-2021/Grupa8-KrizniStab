@@ -1,12 +1,8 @@
 ﻿using CovidX.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CovidX.Controllers
 {
@@ -22,13 +18,13 @@ namespace CovidX.Controllers
         [HttpPost]
         public IActionResult Plati()
         {
-          //  string brojKartice = Request.Form["brojKartice"];
+            //  string brojKartice = Request.Form["brojKartice"];
             Random random = new Random();
-            int placanjeId = random.Next(2000) *2;
+            int placanjeId = random.Next(2000) * 2;
             DateTime datumUplate = DateTime.Today;
             DateTime datumIsteka = DateTime.Today.AddDays(2358);
             KarticnoPlacanje karticno = new KarticnoPlacanje(placanjeId, datumUplate, 45, "5465454", datumIsteka);
-           
+
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
 

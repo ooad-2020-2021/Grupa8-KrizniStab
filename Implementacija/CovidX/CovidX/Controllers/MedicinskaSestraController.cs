@@ -1,13 +1,10 @@
 ﻿using CovidX.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CovidX.Controllers
 {
@@ -99,7 +96,7 @@ namespace CovidX.Controllers
             return View(kartoniPacijenata);
         }
         public IActionResult KartonView(string brojK)
-         
+
         {
             broj = brojK;
             KartonPacijenta karton = new KartonPacijenta("", false, StatusPacijenta.OPORAVLJEN);
@@ -215,12 +212,12 @@ namespace CovidX.Controllers
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
                 string date = "'" + test.datumTestiranja.Year + "-" + test.datumTestiranja.Month + "-" + test.datumTestiranja.Day + "'";
-               var sql = "INSERT INTO  Test Values(" + test.idTesta + "," + date + "," + vrsta + "," +
-                     namjena + "," + rezult + "," + "'" + test.kartonId + "')";
+                var sql = "INSERT INTO  Test Values(" + test.idTesta + "," + date + "," + vrsta + "," +
+                      namjena + "," + rezult + "," + "'" + test.kartonId + "')";
                 connection.Open();
                 using SqlCommand command = new SqlCommand(sql, connection);
                 using SqlDataReader reader = command.ExecuteReader();
-                while(reader.Read())
+                while (reader.Read())
                 {
                     Console.WriteLine(reader);
                 }
@@ -235,7 +232,7 @@ namespace CovidX.Controllers
             string vrstaTesta = Request.Form["vrsta"];
             string namjenaTesta = Request.Form["namjena"];
             string lokacija = Request.Form["lokacija"];
-          
+
 
             RezervacijaTestiranjaMed rezervacija = new RezervacijaTestiranjaMed();
             Test test = new Test();
@@ -251,7 +248,7 @@ namespace CovidX.Controllers
                 namjena = 0;
             else namjena = 1;
 
-            
+
             test.datumTestiranja = DateTime.Today.AddDays(1);
             MedicinskaSestra medSestra = new MedicinskaSestra();
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
@@ -292,7 +289,7 @@ namespace CovidX.Controllers
                 var sql1 = "INSERT INTO  Test Values(" + test.idTesta + "," + date + "," + vrsta + "," +
                     namjena + "," + rezult + "," + "'" + test.kartonId + "')";
                 var sql2 = "Insert INTO [dbo].[Rezervacija testiranja za medicinsko osoblje] Values(" +
-                   datumT + ","  + vrsta + "," + namjena + "," + rezervacija.jmbgMed + ")";
+                   datumT + "," + vrsta + "," + namjena + "," + rezervacija.jmbgMed + ")";
                 connection.Open();
                 using SqlCommand command1 = new SqlCommand(sql1, connection);
                 using SqlDataReader reader1 = command1.ExecuteReader();
@@ -302,7 +299,7 @@ namespace CovidX.Controllers
                 using SqlDataReader reader2 = command2.ExecuteReader();
 
             }
-            return View("MedicinskaSestraView") ;
+            return View("MedicinskaSestraView");
         }
     }
 

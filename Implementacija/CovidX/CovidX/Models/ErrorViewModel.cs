@@ -1,5 +1,3 @@
-using System;
-
 namespace CovidX.Models
 {
     public class ErrorViewModel

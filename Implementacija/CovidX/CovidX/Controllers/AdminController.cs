@@ -5,7 +5,6 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
 
 namespace CovidX.Controllers
 {
@@ -24,7 +23,7 @@ namespace CovidX.Controllers
         {
             return View();
         }
-      
+
         public IActionResult AdminView()
         {
 
@@ -74,7 +73,7 @@ namespace CovidX.Controllers
                 {
                     PrikazTermina prikaz = new PrikazTermina();
                     prikaz.Ime = reader["ime"].ToString();
-                    prikaz.Prezime = reader["prezime"].ToString();             
+                    prikaz.Prezime = reader["prezime"].ToString();
                     prikaz.Email = reader["mail"].ToString();
                     prikaz.Broj = reader["telefon"].ToString();
 
@@ -85,7 +84,7 @@ namespace CovidX.Controllers
                     }
                     if (vrsta == "Brzi antigenski")
                     {
-                        prikaz.Vrsta = VrstaTesta.BRZI_ANTIGENSKI                            ;
+                        prikaz.Vrsta = VrstaTesta.BRZI_ANTIGENSKI;
                     }
                     if (vrsta == "Serološki")
                     {
@@ -136,10 +135,10 @@ namespace CovidX.Controllers
             MedicinskaSestra med = new MedicinskaSestra(ime, prezime, jmbg, DateTime.Parse(datumRodjenja), telefon, mail, spol, brojKartona, DateTime.Today.AddDays(-10), lokacija, 1);
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
-                string dateRodjenja = med.datumRodjenja.Year + "-" + med.datumRodjenja.Month + "-" + med.datumRodjenja.Day ;
+                string dateRodjenja = med.datumRodjenja.Year + "-" + med.datumRodjenja.Month + "-" + med.datumRodjenja.Day;
                 string dateZadnjegTestiranja = med.datumRodjenja.Year + "-" + med.datumRodjenja.Month + "-" + med.datumRodjenja.Day;
                 var sql = "INSERT INTO [dbo].[Medicinska sestra] (jmbg,ime,prezime,datumRodjenja,telefon,mail,spol,brojKartona,datumZadnjegTestiranja,lokacija,adminId) Values('"
-                + med.jmbg + "','" + med.ime + "','" + med.prezime + "','" +dateRodjenja + "','" + med.telefon + "','" + med.mail + "','" + "0" + "','" + med.brojKartona
+                + med.jmbg + "','" + med.ime + "','" + med.prezime + "','" + dateRodjenja + "','" + med.telefon + "','" + med.mail + "','" + "0" + "','" + med.brojKartona
                 + "','" + dateZadnjegTestiranja + "','" + "0" + "','" + med.adminId + "')";
                 var karton = "INSERT INTO [dbo].[Karton osoblja](brojKartona, kriticnaGrupa, statusOsoblja) VALUES('" + med.brojKartona + "', " + 0 + "," + 0 + ")";
                 connection.Open();

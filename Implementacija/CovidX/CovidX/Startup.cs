@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace CovidX
 {
@@ -42,11 +41,11 @@ namespace CovidX
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            
-                app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
-          
-               
+
+            app.UseDeveloperExceptionPage();
+            app.UseDatabaseErrorPage();
+
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

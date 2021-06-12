@@ -8,6 +8,6 @@ namespace CovidX.Models
         DA,
         [Display(Name = "Ne")]
         NE
-      
+
     }
 }

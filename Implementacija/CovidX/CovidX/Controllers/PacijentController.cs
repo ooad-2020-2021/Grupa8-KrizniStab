@@ -67,7 +67,9 @@ namespace CovidX.Controllers
             Test test = new Test();
             krajizolacije = test.odrediKrajIzolacije(datumTestiranja);
             double kraj = (krajizolacije - DateTime.Today).TotalDays;
-            ViewBag.dana = kraj;
+            if (kraj < 0) ViewBag.dana = 0;
+            else
+                ViewBag.dana = kraj;
 
             return View();
         }
